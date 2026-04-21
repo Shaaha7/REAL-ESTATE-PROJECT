@@ -37,7 +37,17 @@ async def lifespan(app: FastAPI):
             if Path(d).exists(): _rag.load_documents_from_dir(d)
     _orch=OrchestratorAgent()
     logger.success(f"All agents ready ✓ | Provider: {settings.llm_provider} | RAG chunks: {len(_rag._docs)}")
-    yield
+    from pathlib import Path
+    import pandas as pd
+
+    leads_path = Path("data/raw/leads.csv")
+
+    if leads_path.exists():
+        _lead.load_data(str(leads_path))
+        logger.success("Leads dataset loaded successfully")
+    else:
+        logger.warning("Leads dataset not found")
+        yield
 
 app = FastAPI(title="PropAI — Real Estate AI Platform", version="1.0.0", lifespan=lifespan, docs_url="/api/docs", redoc_url="/api/redoc", openapi_url="/api/openapi.json")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
