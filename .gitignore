@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.env
+venv/ .venv/
+backend/mlruns/
+backend/logs/*.log
+backend/data/documents/*.faiss
+backend/data/documents/*.pkl
+backend/data/models/*.pkl
+node_modules/
+frontend/dist/
+.DS_Store
+*.zip
+v e n v / 
+ 
+ _ _ p y c a c h e _ _ / 
+ 
+ * . p y c 
+ 
+ . e n v 
+ 
+ 

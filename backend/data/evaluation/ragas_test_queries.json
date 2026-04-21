@@ -1,0 +1,92 @@
+[
+  {
+    "id": "Q001",
+    "question": "What are the DLD transfer fees for buying property in Dubai?",
+    "ground_truth": "4% of purchase price plus admin fees (AED 4,000 for properties under AED 500K, AED 580 for above)",
+    "category": "DLD Fees"
+  },
+  {
+    "id": "Q002",
+    "question": "What is the minimum mortgage down payment for expats in Dubai?",
+    "ground_truth": "25% LTV for first property up to AED 5M (UAE residents/expats), 30% for non-residents",
+    "category": "Mortgage"
+  },
+  {
+    "id": "Q003",
+    "question": "How do I get a Golden Visa through property investment?",
+    "ground_truth": "Purchase property worth AED 2 million or more, fully paid (not mortgaged), apply through GDRFA or ICA",
+    "category": "Golden Visa"
+  },
+  {
+    "id": "Q004",
+    "question": "What documents are needed for off-plan property purchase?",
+    "ground_truth": "Passport, Emirates ID (residents), signed SPA, proof of funds or mortgage pre-approval, developer RERA number",
+    "category": "Off-Plan"
+  },
+  {
+    "id": "Q005",
+    "question": "Which areas in Dubai can foreigners buy freehold property?",
+    "ground_truth": "Dubai Marina, Downtown Dubai, Palm Jumeirah, JLT, Business Bay, Arabian Ranches, Dubai Hills, JVC, DIFC and other designated zones",
+    "category": "Freehold"
+  },
+  {
+    "id": "Q006",
+    "question": "What does RERA regulate in Dubai real estate?",
+    "ground_truth": "RERA regulates developer registration, broker licensing, rental regulations (RERA index), escrow accounts, dispute resolution, and Owners Associations",
+    "category": "RERA"
+  },
+  {
+    "id": "Q007",
+    "question": "How are service charges calculated for apartments?",
+    "ground_truth": "Per square foot per year, varies by location: Downtown AED 18-25/sqft, Marina AED 12-18/sqft, JVC AED 10-14/sqft",
+    "category": "Service Charges"
+  },
+  {
+    "id": "Q008",
+    "question": "What is the maximum rent increase allowed in Dubai?",
+    "ground_truth": "Based on RERA index: 0% if within 10%, up to 5% if 11-20% below, 10% if 21-30% below, 15% if 31-40% below, 20% if more than 40% below market",
+    "category": "Rental"
+  },
+  {
+    "id": "Q009",
+    "question": "What are the total transaction costs when buying property in Dubai?",
+    "ground_truth": "Approximately 7-8% of purchase price: 4% DLD transfer, 2% agent commission, mortgage fees, title deed, admin fees",
+    "category": "Transaction Costs"
+  },
+  {
+    "id": "Q010",
+    "question": "What is Ejari and when is it required?",
+    "ground_truth": "Ejari is RERA's tenancy registration system. All rental contracts must be registered within 30 days for DEWA, visa renewal, school enrollment",
+    "category": "Rental"
+  },
+  {
+    "id": "Q011",
+    "question": "What are the advantages of buying off-plan in Dubai?",
+    "ground_truth": "Lower entry price (15-30% below market), flexible payment plans, capital appreciation during construction, choice of unit and finishes",
+    "category": "Off-Plan"
+  },
+  {
+    "id": "Q012",
+    "question": "What is the NOC and when is it needed?",
+    "ground_truth": "No Objection Certificate from developer required when selling in managed community or under mortgage. Takes 5-15 working days, costs AED 500-5,000",
+    "category": "NOC"
+  },
+  {
+    "id": "Q013",
+    "question": "What are the highest rental yield areas in Dubai?",
+    "ground_truth": "JVC (7.5-9.5%), Dubai Silicon Oasis (7-8.5%), International City (8-10%), JLT (6-8%) for apartments",
+    "category": "Investment"
+  },
+  {
+    "id": "Q014",
+    "question": "What is the debt burden ratio for UAE mortgages?",
+    "ground_truth": "Maximum 50% of gross monthly income including all existing debt obligations",
+    "category": "Mortgage"
+  },
+  {
+    "id": "Q015",
+    "question": "How long does the property buying process take in Dubai?",
+    "ground_truth": "4-8 weeks for cash purchase, 6-12 weeks for mortgage purchase, from MOU signing to title deed",
+    "category": "Buying Process"
+  }
+]

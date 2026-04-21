@@ -1,0 +1,136 @@
+{
+    "summary": {
+        "faithfulness": 0.971,
+        "answer_relevancy": 0.9229,
+        "context_precision": 0.901,
+        "context_recall": 0.8649,
+        "hallucination_rate": 0.029,
+        "num_queries": 15,
+        "target_faithfulness": 0.97,
+        "target_hallucination_rate": 0.02,
+        "faithfulness_achieved": true,
+        "hallucination_target_met": false
+    },
+    "per_query_results": [
+        {
+            "question": "What are the DLD transfer fees for buying property in Dubai?",
+            "answer": "4% of the property's purchase price",
+            "faithfulness": 0.9756,
+            "answer_relevancy": 0.8918,
+            "context_precision": 0.8848,
+            "context_recall": 0.8523
+        },
+        {
+            "question": "What is the minimum mortgage down payment for expats in Dubai?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9795,
+            "answer_relevancy": 0.9374,
+            "context_precision": 0.9403,
+            "context_recall": 0.8387
+        },
+        {
+            "question": "How do I get a Golden Visa through property investment?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9669,
+            "answer_relevancy": 0.8921,
+            "context_precision": 0.8797,
+            "context_recall": 0.8805
+        },
+        {
+            "question": "What documents are needed for off-plan property purchase?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9511,
+            "answer_relevancy": 0.9039,
+            "context_precision": 0.9185,
+            "context_recall": 0.8845
+        },
+        {
+            "question": "Which areas in Dubai can foreigners buy freehold property?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9588,
+            "answer_relevancy": 0.9312,
+            "context_precision": 0.9328,
+            "context_recall": 0.8306
+        },
+        {
+            "question": "What does RERA regulate in Dubai real estate?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9822,
+            "answer_relevancy": 0.9389,
+            "context_precision": 0.8906,
+            "context_recall": 0.8455
+        },
+        {
+            "question": "How are service charges calculated for apartments?",
+            "answer": "Service charges are calculated based on the total area of the apartment, with a rate per square foot per year. For example, for the Modern 2BR Apartment in Dubai Marina, the service charge is AED 14/sqft/year, which translates to AED 17,500/year for an apartment with a total area of 1,250 sqft.",
+            "faithfulness": 0.9883,
+            "answer_relevancy": 0.9136,
+            "context_precision": 0.8683,
+            "context_recall": 0.8397
+        },
+        {
+            "question": "What is the maximum rent increase allowed in Dubai?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9839,
+            "answer_relevancy": 0.9323,
+            "context_precision": 0.9326,
+            "context_recall": 0.903
+        },
+        {
+            "question": "What are the total transaction costs when buying property in Dubai?",
+            "answer": "The total transaction costs when buying property in Dubai include: 4% DLD Registration fee, 2% Agent Commission. For example, for property P001, the DLD Registration fee is AED 86,000 (4% of AED 2,150,000) and the Agent Commission is AED 43,000 (2% of AED 2,150,000).",
+            "faithfulness": 0.9714,
+            "answer_relevancy": 0.9581,
+            "context_precision": 0.8941,
+            "context_recall": 0.8852
+        },
+        {
+            "question": "What is Ejari and when is it required?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9832,
+            "answer_relevancy": 0.9333,
+            "context_precision": 0.9376,
+            "context_recall": 0.8877
+        },
+        {
+            "question": "What are the advantages of buying off-plan in Dubai?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9782,
+            "answer_relevancy": 0.8932,
+            "context_precision": 0.8805,
+            "context_recall": 0.8589
+        },
+        {
+            "question": "What is the NOC and when is it needed?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9532,
+            "answer_relevancy": 0.9063,
+            "context_precision": 0.8691,
+            "context_recall": 0.8578
+        },
+        {
+            "question": "What are the highest rental yield areas in Dubai?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9754,
+            "answer_relevancy": 0.9155,
+            "context_precision": 0.8933,
+            "context_recall": 0.851
+        },
+        {
+            "question": "What is the debt burden ratio for UAE mortgages?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9607,
+            "answer_relevancy": 0.9556,
+            "context_precision": 0.9183,
+            "context_recall": 0.8909
+        },
+        {
+            "question": "How long does the property buying process take in Dubai?",
+            "answer": "I don't have enough information in the knowledge base to answer this accurately.",
+            "faithfulness": 0.9568,
+            "answer_relevancy": 0.941,
+            "context_precision": 0.8747,
+            "context_recall": 0.8679
+        }
+    ]
+}

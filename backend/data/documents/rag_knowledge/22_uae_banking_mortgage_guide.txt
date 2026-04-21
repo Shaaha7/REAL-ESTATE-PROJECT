@@ -1,0 +1,89 @@
+UAE BANKING FOR EXPATS — COMPLETE GUIDE
+========================================
+
+OPENING A UAE BANK ACCOUNT (EXPAT)
+
+Requirements:
+- Valid passport
+- UAE residence visa
+- Emirates ID
+- Proof of address (utility bill or tenancy contract)
+- Salary certificate or employment letter
+- 3-6 months bank statements from home country (some banks)
+
+Best banks for expats:
+1. Emirates NBD — largest UAE bank, best app, widespread ATMs
+2. ADCB (Abu Dhabi Commercial Bank) — good mortgage rates, TouchPoints rewards
+3. FAB (First Abu Dhabi Bank) — premium banking, good wealth management
+4. Mashreq — good for self-employed, faster account opening
+5. HSBC UAE — ideal for international clients, global transfers easy
+6. Standard Chartered UAE — good for South Asian clients
+7. RAKBANK — good for small business owners
+
+Account types:
+- Current account (no interest, cheque book)
+- Savings account (interest 0.5-2% pa)
+- Fixed deposit (2.5-4.5% pa for 1-3 years)
+- Islamic accounts (profit-sharing, no interest — for Sharia compliance)
+
+MORTGAGE BANKS IN UAE — BEST RATES 2024
+
+Top mortgage lenders (ranked by rate competitiveness):
+1. Emirates NBD: From 3.99% fixed (1 year), variable EIBOR+1.5%
+2. FAB: From 3.89% fixed, competitive for AED 3M+
+3. ADCB: From 4.15% fixed, good for salaried employees
+4. Mashreq: From 4.25% fixed, flexible for self-employed
+5. HSBC: From 4.35% fixed, good for international clients
+6. DIB (Dubai Islamic Bank): From 4.1% (Islamic Ijara product)
+7. ADIB (Abu Dhabi Islamic Bank): Competitive Islamic mortgage
+
+EIBOR (Emirates Interbank Offered Rate):
+UAE mortgages are often EIBOR-linked (variable rate).
+EIBOR 3-month rate (2024): approximately 4.8-5.2%
+Variable mortgage = EIBOR + bank spread (1.5-2.5%)
+Variable rate effective: 6.3-7.7% (2024 environment)
+Fixed rates (1-5 years): 3.99-5.5% then revert to variable
+
+MORTGAGE ELIGIBILITY CRITERIA
+Salaried employees:
+- Minimum salary: AED 10,000/month (most banks)
+- Some banks require: AED 15,000 (for properties above AED 1.5M)
+- Employment: Minimum 3-6 months with current employer
+- DBR (Debt Burden Ratio): Must not exceed 50% of monthly income
+
+Self-employed:
+- Minimum 2 years business operation
+- Audited financials for 2 years
+- Higher scrutiny, may need higher down payment
+- Minimum income: AED 25,000/month from business
+
+Non-residents (mortgages):
+- Very limited options
+- Usually 50% LTV maximum
+- Higher rates: 5-7%
+- Mashreq, ADCB, RAKBank offer non-resident mortgages
+
+USEFUL CALCULATIONS
+
+Monthly mortgage payment formula:
+Monthly = [P × r(1+r)^n] / [(1+r)^n - 1]
+Where: P = loan amount, r = monthly rate, n = months
+
+Example: AED 1,500,000 mortgage at 4.5% fixed, 25 years:
+Monthly rate = 4.5% / 12 = 0.375%
+Monthly payment = AED 8,322/month
+
+Example: AED 3,000,000 mortgage at 4.5%, 25 years:
+Monthly payment = AED 16,644/month
+
+Example: AED 5,000,000 mortgage at 4.5%, 25 years:
+Monthly payment = AED 27,740/month
+
+MORTGAGE PROCESS TIMELINE
+Day 1-3: Submit pre-approval application with documents
+Day 3-7: Bank issues pre-approval (in-principle approval)
+Day 7-14: Find property, sign MOU
+Day 14-21: Bank orders independent valuation (AED 2,500-3,500)
+Day 21-30: Final offer letter issued
+Day 30-45: Mortgage registration at DLD (0.25% of loan amount)
+Day 45-60: Transfer and title deed in buyer's name

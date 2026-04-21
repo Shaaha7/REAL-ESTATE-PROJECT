@@ -1,0 +1,72 @@
+RERA — REAL ESTATE REGULATORY AGENCY COMPLETE GUIDE
+====================================================
+
+WHAT IS RERA?
+RERA (Real Estate Regulatory Agency) is the regulatory arm of the Dubai Land Department (DLD).
+Established in 2007, RERA governs all real estate activity in Dubai including:
+- Developer registration and project approvals
+- Broker and agent licensing
+- Rental regulations (RERA rental index)
+- Dispute resolution
+- Off-plan escrow management
+
+DEVELOPER REQUIREMENTS
+Before selling any off-plan property, developers must:
+1. Register the project with RERA (get RERA project number)
+2. Obtain all construction permits from relevant authorities
+3. Open a RERA-approved escrow account (funds held separately)
+4. Show proof of land ownership or long-term lease
+5. Obtain DLD approval for sales launch
+6. Register all sales staff as licensed real estate brokers
+
+ESCROW ACCOUNT REQUIREMENTS
+- Developer cannot access escrow funds until construction milestones are reached
+- DLD appoints independent escrow auditors
+- Buyer funds are protected if developer defaults
+- Escrow releases: 20% on foundation, 30% on structure, 30% on completion, 20% on handover
+
+BROKER AND AGENT LICENSING
+All real estate brokers in Dubai must:
+- Pass the RERA exam (Certified Real Estate Broker)
+- Register with Dubai Land Department
+- Obtain a RERA broker card (renewed annually)
+- Work under a licensed real estate company (brokerage)
+- Display RERA card number on all marketing materials
+
+HOW TO VERIFY BROKER CREDENTIALS
+- Dubai REST app: Search broker by name or RERA number
+- DLD website: Broker verification portal
+- Report unlicensed brokers: 800-DLD (800-353)
+
+RENTAL REGULATIONS
+Rental Increase Calculator: RERA provides an official rental index
+- If current rent is within 10% of RERA index: 0% increase allowed
+- If rent is 11-20% below index: Maximum 5% increase
+- If rent is 21-30% below index: Maximum 10% increase
+- If rent is 31-40% below index: Maximum 15% increase
+- If rent is more than 40% below index: Maximum 20% increase
+
+EJARI REGISTRATION
+All tenancy contracts must be registered on Ejari (RERA online system):
+- Mandatory for all rental agreements in Dubai
+- Required for: DEWA connection, residency visa renewal, school enrollment
+- Registration fee: AED 195 (service centers) or AED 155 (online)
+- Both landlord and tenant must register within 30 days of signing
+
+STRATA LAW (OWNERS ASSOCIATIONS)
+- All jointly owned property communities must have an Owners Association (OA)
+- OA manages common areas, collects service charges
+- Annual budgets must be approved by RERA
+- Service charges based on RERA-approved rates per square foot
+
+DISPUTE RESOLUTION
+The Rental Dispute Settlement Centre (RDSC):
+- Filing fee: 3.5% of annual rent (min AED 250, max AED 20,000)
+- Handles: Eviction disputes, rent increase disagreements, maintenance disputes
+- Process: Filing → Mediation (30 days) → Judgment (30 days)
+
+IMPORTANT RERA CONTACTS
+- DLD Main: +971 4 222 2255
+- RERA: +971 4 203 0500
+- Dubai REST App: Available on iOS and Android
+- Email: info@rpdubai.ae

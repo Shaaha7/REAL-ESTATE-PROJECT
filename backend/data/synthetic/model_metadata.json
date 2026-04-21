@@ -1,0 +1,29 @@
+{
+  "model": "XGBoostRegressor",
+  "features": [
+    "budget_normalized",
+    "urgency_score",
+    "engagement_score",
+    "property_match_score",
+    "response_time_score",
+    "communication_quality_score",
+    "location_preference_match"
+  ],
+  "target": "lead_score_target (0-100)",
+  "feature_weights": {
+    "budget_normalized": "25% (most important)",
+    "urgency_score": "20%",
+    "engagement_score": "20%",
+    "property_match_score": "15%",
+    "response_time_score": "10%",
+    "communication_quality_score": "10%",
+    "location_preference_match": "composite factor"
+  },
+  "tier_thresholds": {
+    "HOT": ">=75",
+    "WARM": ">=50",
+    "COLD": "<50"
+  },
+  "training_samples": 3000,
+  "ensemble": "XGBoost 60% + LLM 40%"
+}

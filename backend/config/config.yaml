@@ -1,0 +1,37 @@
+project:
+  name: "PropAI — Autonomous Real Estate AI Platform"
+  version: "1.0.0"
+llm:
+  provider: "gemini"
+  gemini_model: gemini-1.5-flash-latest"
+  groq_model: "llama-3.3-70b-versatile"
+  temperature: 0.1
+  max_tokens: 2048
+  timeout: 30
+rag:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  faiss_index_path: "data/documents/faiss_index"
+  chunk_size: 512
+  chunk_overlap: 64
+  top_k_final: 5
+  min_score_threshold: 0.25
+  documents_dir: "data/documents"
+lead_scoring:
+  model_path: "data/models/lead_scorer.pkl"
+  training_data: "data/synthetic/lead_training_data_3000.csv"
+  score_threshold_hot: 75
+  score_threshold_warm: 50
+  shap_explainability: true
+  ml_weight: 0.6
+  llm_weight: 0.4
+api:
+  host: "0.0.0.0"
+  port: 8000
+mlflow:
+  tracking_uri: "mlruns"
+  experiment_name: "realestate-lead-scoring"
+evaluation:
+  test_queries_path: "data/evaluation/ragas_test_queries.json"
+  results_path: "data/evaluation/ragas_results.json"
+  target_faithfulness: 0.97
+  target_hallucination: 0.02

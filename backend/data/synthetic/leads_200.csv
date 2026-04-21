@@ -1,0 +1,201 @@
+lead_id,client_name,email,phone,budget_aed,property_type,location_preference,bedrooms,timeline_months,num_interactions,avg_response_hours,message_quality_score,source,status,lead_score,tier,notes,created_at,last_contact
+L0001,Ahmed Al Mansoori,ahmed.0@email.com,+971 53 616 3281,2500000,townhouse,Dubai Hills Estate,2,24,13,4.4,0.46,exhibition,lost,53.28,WARM,Needs more info,2024-10-26,2025-02-18
+L0002,Sarah Johnson,sarah.1@email.com,+971 57 129 7386,750000,penthouse,DIFC,5,24,2,24.9,0.78,agent,lost,31.75,COLD,"Very interested, ready to view",2024-12-15,2025-02-24
+L0003,Mohammed Al Rashidi,mohammed.2@email.com,+971 50 695 3594,300000,penthouse,Al Barsha,2,3,2,8.6,0.76,cold call,proposal_sent,48.61,COLD,Cash buyer,2024-06-18,2025-02-17
+L0004,Priya Sharma,priya.3@email.com,+971 54 664 4839,1000000,apartment,Dubai Silicon Oasis,4,24,4,35.8,0.66,referral,proposal_sent,43.99,COLD,Cash buyer,2024-09-16,2025-02-21
+L0005,David Chen,david.4@email.com,+971 54 919 1964,1000000,apartment,Mirdif,0,18,9,10.4,0.53,referral,negotiating,46.64,COLD,End user,2024-05-25,2025-01-27
+L0006,Fatima Al Zaabi,fatima.5@email.com,+971 51 480 8685,8000000,apartment,Arabian Ranches,1,1,8,71.3,0.86,exhibition,negotiating,66.82,WARM,Needs more info,2024-10-08,2025-01-24
+L0007,James Wilson,james.6@email.com,+971 55 427 1358,8000000,townhouse,Jumeirah Village Circle,5,9,2,46.8,0.13,portal,lost,31.5,COLD,Relocating from abroad,2024-12-28,2025-02-18
+L0008,Aisha Al Hamdan,aisha.7@email.com,+971 58 319 1614,2000000,villa,Arabian Ranches,0,1,4,38.2,0.17,social media,proposal_sent,45.48,COLD,Needs more info,2024-04-03,2025-03-14
+L0009,Carlos Rodriguez,carlos.8@email.com,+971 58 314 7565,1000000,villa,Jumeirah Village Circle,0,3,11,92.4,0.27,referral,proposal_sent,57.41,WARM,Pre-approved mortgage,2024-07-16,2025-03-07
+L0010,Li Wei,li.9@email.com,+971 51 442 1670,3500000,penthouse,Dubai Hills Estate,2,3,11,26.0,0.88,referral,closed,60.54,WARM,Pre-approved mortgage,2024-12-14,2025-01-06
+L0011,Omar Al Maktoum,omar.10@email.com,+971 52 135 9530,8000000,penthouse,Jumeirah Lake Towers,3,1,1,41.5,0.29,exhibition,new,56.06,WARM,Relocating from abroad,2024-12-12,2025-01-14
+L0012,Emma Thompson,emma.11@email.com,+971 51 557 5970,3500000,apartment,Downtown Dubai,3,6,14,43.6,0.27,social media,negotiating,52.36,WARM,"Very interested, ready to view",2024-10-13,2025-02-21
+L0013,Khalid Al Marzouqi,khalid.12@email.com,+971 57 807 4729,3500000,studio,Dubai Marina,2,12,8,63.3,0.23,referral,closed,36.32,COLD,In talks with other agents,2024-03-15,2025-02-06
+L0014,Anya Patel,anya.13@email.com,+971 52 233 2160,1500000,studio,Al Quoz,1,3,9,65.9,0.69,cold call,contacted,64.9,WARM,Investment buyer,2024-01-14,2025-01-27
+L0015,Marcus Brown,marcus.14@email.com,+971 56 503 2939,500000,townhouse,Palm Jumeirah,5,9,7,26.4,0.36,referral,lost,39.89,COLD,End user,2024-06-26,2025-02-12
+L0016,Layla Al Suwaidi,layla.15@email.com,+971 52 977 7017,1000000,apartment,Downtown Dubai,0,1,0,50.3,0.24,portal,qualified,44.22,COLD,Pre-approved mortgage,2024-12-12,2025-02-13
+L0017,Ryan Mitchell,ryan.16@email.com,+971 53 750 4644,2000000,villa,Business Bay,3,18,15,46.4,0.3,referral,qualified,49.44,COLD,End user,2024-11-05,2025-03-20
+L0018,Noor Al Hashimi,noor.17@email.com,+971 51 127 5078,5000000,penthouse,Al Quoz,5,12,13,77.5,0.36,exhibition,closed,46.96,COLD,Comparing options,2024-05-28,2025-03-26
+L0019,Stefan Mueller,stefan.18@email.com,+971 57 370 4213,750000,townhouse,Dubai Silicon Oasis,5,12,3,63.7,0.32,agent,new,24.88,COLD,End user,2024-09-22,2025-01-28
+L0020,Mei Lin,mei.19@email.com,+971 52 709 5277,12000000,villa,Business Bay,2,2,1,75.5,0.56,agent,proposal_sent,61.43,WARM,End user,2024-05-27,2025-01-25
+L0021,Abdullah Al Falasi,abdullah.20@email.com,+971 51 205 3049,12000000,townhouse,Jumeirah Village Circle,1,2,4,25.3,0.88,social media,negotiating,73.49,WARM,Pre-approved mortgage,2024-07-07,2025-01-11
+L0022,Sofia Martinez,sofia.21@email.com,+971 58 640 4867,750000,villa,Dubai Marina,3,9,13,66.4,0.53,portal,qualified,52.19,WARM,In talks with other agents,2024-07-03,2025-01-26
+L0023,Hassan Al Qassimi,hassan.22@email.com,+971 51 337 5411,750000,villa,Jumeirah Lake Towers,5,24,7,2.8,0.27,referral,negotiating,37.34,COLD,Price sensitive,2024-09-22,2025-03-14
+L0024,Yuki Tanaka,yuki.23@email.com,+971 57 114 4621,1500000,studio,Jumeirah Village Circle,2,9,2,2.1,0.48,social media,new,39.39,COLD,Needs more info,2024-02-23,2025-02-14
+L0025,Patrick O'Brien,patrick.24@email.com,+971 52 925 5642,2500000,villa,Jumeirah Village Circle,5,3,5,21.3,0.27,cold call,proposal_sent,57.63,WARM,Needs more info,2024-01-17,2025-01-16
+L0026,Mariam Al Dhaheri,mariam.25@email.com,+971 51 702 3038,2500000,studio,Al Barsha,2,9,0,20.9,0.67,referral,closed,41.02,COLD,Relocating from abroad,2024-09-26,2025-03-11
+L0027,Alex Turner,alex.26@email.com,+971 58 275 8038,1000000,apartment,Dubai Silicon Oasis,3,1,6,41.8,0.22,exhibition,proposal_sent,59.85,WARM,Relocating from abroad,2024-12-28,2025-01-22
+L0028,Reem Al Shamsi,reem.27@email.com,+971 55 954 7601,12000000,apartment,Palm Jumeirah,2,9,15,67.5,0.28,referral,contacted,63.58,WARM,Pre-approved mortgage,2024-02-24,2025-03-19
+L0029,Viktor Petrov,viktor.28@email.com,+971 52 501 3668,500000,apartment,DIFC,3,3,4,52.6,0.3,cold call,contacted,46.71,COLD,Relocating from abroad,2024-01-14,2025-01-03
+L0030,Amira Khalil,amira.29@email.com,+971 51 967 8286,5000000,apartment,Jumeirah,3,9,2,33.5,0.18,web,qualified,28.33,COLD,Needs more info,2024-08-11,2025-03-18
+L0031,Thomas Anderson,thomas.30@email.com,+971 51 572 1124,5000000,studio,Palm Jumeirah,3,6,9,58.9,0.98,referral,new,62.07,WARM,Needs more info,2024-03-27,2025-03-17
+L0032,Zainab Al Nuaimi,zainab.31@email.com,+971 52 250 1542,300000,villa,Dubai Hills Estate,1,18,15,11.2,0.23,referral,contacted,48.89,COLD,Cash buyer,2024-12-15,2025-03-14
+L0033,Michael Chang,michael.32@email.com,+971 50 635 8680,500000,townhouse,DIFC,0,6,6,14.3,0.55,cold call,new,48.85,COLD,Cash buyer,2024-03-17,2025-01-16
+L0034,Hind Al Blooshi,hind.33@email.com,+971 59 615 6259,8000000,studio,Jumeirah Village Circle,4,9,5,60.9,0.53,social media,proposal_sent,52.04,WARM,Investment buyer,2024-11-21,2025-01-10
+L0035,Jean-Pierre Dubois,jean-pierre.34@email.com,+971 54 449 2548,5000000,studio,Mirdif,2,6,11,56.4,0.91,agent,lost,66.39,WARM,Price sensitive,2024-02-09,2025-02-20
+L0036,Salma Al Kaabi,salma.35@email.com,+971 58 873 5491,5000000,townhouse,Jumeirah,3,12,10,72.2,0.88,web,closed,59.09,WARM,In talks with other agents,2024-02-12,2025-01-17
+L0037,Robert Smith,robert.36@email.com,+971 56 473 5392,2000000,studio,Downtown Dubai,4,9,1,94.4,0.89,referral,negotiating,34.34,COLD,Comparing options,2024-08-13,2025-02-25
+L0038,Dana Al Mazrouei,dana.37@email.com,+971 57 715 5619,12000000,penthouse,Dubai Silicon Oasis,3,1,2,89.8,0.67,web,proposal_sent,60.39,WARM,Pre-approved mortgage,2024-03-26,2025-01-03
+L0039,Arjun Kapoor,arjun.38@email.com,+971 52 704 6645,12000000,townhouse,Business Bay,3,2,13,41.5,0.16,cold call,closed,69.67,WARM,End user,2024-10-24,2025-02-16
+L0040,Leila Moradi,leila.39@email.com,+971 55 827 3921,1000000,villa,Business Bay,4,6,8,37.3,0.3,cold call,closed,57.84,WARM,Needs more info,2024-06-01,2025-01-14
+L0041,Benjamin White,benjamin.40@email.com,+971 50 640 3127,3500000,villa,Al Barsha,2,6,1,23.9,0.22,web,contacted,42.68,COLD,In talks with other agents,2024-12-15,2025-01-06
+L0042,Noura Al Suwaidi,noura.41@email.com,+971 54 492 1152,2500000,apartment,Al Barsha,4,3,10,22.5,0.91,agent,lost,70.9,WARM,"Very interested, ready to view",2024-08-05,2025-01-24
+L0043,Ethan Davis,ethan.42@email.com,+971 58 189 7912,12000000,villa,Dubai Marina,5,9,3,2.9,0.32,portal,new,56.35,WARM,Relocating from abroad,2024-04-17,2025-03-01
+L0044,Manal Al Habsi,manal.43@email.com,+971 59 610 1313,300000,studio,Arabian Ranches,5,3,9,67.0,0.96,web,negotiating,61.65,WARM,End user,2024-10-28,2025-03-25
+L0045,Ivan Kozlov,ivan.44@email.com,+971 58 805 5964,2500000,penthouse,DIFC,0,6,3,17.4,0.36,portal,proposal_sent,37.84,COLD,End user,2024-06-03,2025-02-27
+L0046,Hessa Al Muhairi,hessa.45@email.com,+971 51 418 1585,1500000,studio,Downtown Dubai,0,2,13,47.1,0.37,referral,contacted,55.84,WARM,Investment buyer,2024-12-05,2025-01-28
+L0047,William Taylor,william.46@email.com,+971 50 170 6244,500000,villa,Al Quoz,4,6,12,4.3,0.67,portal,new,52.16,WARM,Price sensitive,2024-09-10,2025-03-11
+L0048,Shaikha Al Qemzi,shaikha.47@email.com,+971 56 774 1387,2000000,villa,Dubai Marina,4,24,2,41.6,0.61,web,qualified,28.72,COLD,Pre-approved mortgage,2024-12-18,2025-01-27
+L0049,Rajesh Kumar,rajesh.48@email.com,+971 52 926 2761,5000000,penthouse,Al Barsha,1,9,10,13.1,0.81,social media,contacted,59.89,WARM,Relocating from abroad,2024-09-18,2025-03-05
+L0050,Nina Volkov,nina.49@email.com,+971 54 258 8451,500000,villa,Al Barsha,4,2,11,40.0,0.39,social media,negotiating,63.68,WARM,Cash buyer,2024-04-28,2025-03-10
+L0051,Ahmed Al Mansoori,ahmed.50@email.com,+971 58 187 3511,3500000,townhouse,Al Quoz,2,6,8,35.3,0.72,exhibition,new,61.15,WARM,End user,2024-06-08,2025-01-03
+L0052,Sarah Johnson,sarah.51@email.com,+971 58 636 6610,1000000,studio,Al Barsha,3,6,5,24.0,0.85,web,qualified,46.49,COLD,Comparing options,2024-05-13,2025-03-01
+L0053,Mohammed Al Rashidi,mohammed.52@email.com,+971 56 950 4000,1500000,townhouse,Jumeirah Village Circle,3,24,1,84.5,0.87,web,closed,33.2,COLD,"Very interested, ready to view",2024-01-18,2025-02-15
+L0054,Priya Sharma,priya.53@email.com,+971 50 273 6632,8000000,apartment,Business Bay,2,24,6,44.1,0.94,social media,closed,50.94,WARM,"Very interested, ready to view",2024-03-02,2025-02-08
+L0055,David Chen,david.54@email.com,+971 56 997 4420,750000,apartment,Dubai Marina,3,24,14,53.6,0.9,agent,proposal_sent,50.41,WARM,Cash buyer,2024-08-20,2025-01-18
+L0056,Fatima Al Zaabi,fatima.55@email.com,+971 57 653 7313,500000,penthouse,Mirdif,1,9,6,14.8,0.86,cold call,proposal_sent,46.39,COLD,End user,2024-12-14,2025-03-25
+L0057,James Wilson,james.56@email.com,+971 51 445 5185,5000000,studio,Palm Jumeirah,5,9,0,45.7,0.79,agent,new,39.72,COLD,In talks with other agents,2024-04-02,2025-03-18
+L0058,Aisha Al Hamdan,aisha.57@email.com,+971 56 120 3708,300000,studio,DIFC,3,1,11,56.8,0.3,web,qualified,58.66,WARM,Comparing options,2024-07-04,2025-03-24
+L0059,Carlos Rodriguez,carlos.58@email.com,+971 54 560 7865,8000000,townhouse,Al Quoz,3,6,6,20.1,0.14,agent,negotiating,52.54,WARM,Needs more info,2024-01-16,2025-01-16
+L0060,Li Wei,li.59@email.com,+971 50 948 8945,1000000,penthouse,Jumeirah Village Circle,2,24,2,89.6,0.12,exhibition,lost,23.38,COLD,Cash buyer,2024-05-25,2025-01-24
+L0061,Omar Al Maktoum,omar.60@email.com,+971 50 911 2510,1500000,apartment,Dubai Hills Estate,3,9,9,55.7,0.31,agent,proposal_sent,55.8,WARM,"Very interested, ready to view",2024-04-21,2025-01-14
+L0062,Emma Thompson,emma.61@email.com,+971 51 515 8558,3500000,townhouse,Dubai Hills Estate,5,12,5,53.7,0.36,exhibition,qualified,41.49,COLD,"Very interested, ready to view",2024-09-23,2025-01-21
+L0063,Khalid Al Marzouqi,khalid.62@email.com,+971 52 107 5269,8000000,apartment,Al Quoz,5,6,5,6.7,0.9,web,new,57.82,WARM,"Very interested, ready to view",2024-08-16,2025-03-01
+L0064,Anya Patel,anya.63@email.com,+971 53 397 2211,3500000,townhouse,Al Quoz,3,9,14,28.6,0.54,referral,closed,55.55,WARM,In talks with other agents,2024-01-08,2025-03-28
+L0065,Marcus Brown,marcus.64@email.com,+971 53 815 3415,3500000,villa,Al Quoz,0,18,3,60.7,0.58,cold call,proposal_sent,32.08,COLD,Pre-approved mortgage,2024-04-24,2025-01-03
+L0066,Layla Al Suwaidi,layla.65@email.com,+971 56 330 2179,2500000,studio,Jumeirah Village Circle,3,6,9,28.0,0.5,social media,qualified,53.51,WARM,Relocating from abroad,2024-11-16,2025-03-23
+L0067,Ryan Mitchell,ryan.66@email.com,+971 51 862 9108,500000,apartment,Jumeirah Village Circle,2,6,9,42.0,0.81,web,negotiating,63.89,WARM,Price sensitive,2024-12-03,2025-03-12
+L0068,Noor Al Hashimi,noor.67@email.com,+971 53 759 1651,500000,apartment,Business Bay,3,24,3,73.7,0.47,social media,new,27.07,COLD,Price sensitive,2024-08-06,2025-01-22
+L0069,Stefan Mueller,stefan.68@email.com,+971 58 469 3728,3500000,studio,Al Barsha,5,6,3,58.4,0.49,web,lost,47.12,COLD,Needs more info,2024-01-18,2025-03-16
+L0070,Mei Lin,mei.69@email.com,+971 58 524 8615,12000000,penthouse,DIFC,2,3,1,9.7,0.16,web,proposal_sent,62.32,WARM,Cash buyer,2024-06-18,2025-03-26
+L0071,Abdullah Al Falasi,abdullah.70@email.com,+971 53 831 7726,500000,penthouse,Palm Jumeirah,1,24,9,67.6,0.22,referral,proposal_sent,42.58,COLD,Needs more info,2024-09-11,2025-02-13
+L0072,Sofia Martinez,sofia.71@email.com,+971 59 298 9269,2000000,villa,Al Quoz,2,3,0,25.8,0.84,portal,closed,50.92,WARM,Cash buyer,2024-06-27,2025-02-25
+L0073,Hassan Al Qassimi,hassan.72@email.com,+971 55 338 7225,500000,apartment,Al Barsha,5,12,5,33.4,0.38,cold call,new,37.1,COLD,Relocating from abroad,2024-08-26,2025-01-15
+L0074,Yuki Tanaka,yuki.73@email.com,+971 53 561 2808,1500000,villa,Business Bay,0,3,3,48.5,0.51,social media,proposal_sent,38.69,COLD,"Very interested, ready to view",2024-07-12,2025-03-14
+L0075,Patrick O'Brien,patrick.74@email.com,+971 57 636 5552,8000000,penthouse,Dubai Hills Estate,1,9,3,31.0,0.26,exhibition,qualified,41.78,COLD,Investment buyer,2024-09-20,2025-01-23
+L0076,Mariam Al Dhaheri,mariam.75@email.com,+971 55 185 5115,3500000,townhouse,Jumeirah Village Circle,5,24,13,43.9,0.92,cold call,closed,54.53,WARM,End user,2024-10-22,2025-02-09
+L0077,Alex Turner,alex.76@email.com,+971 57 601 4785,2000000,villa,Jumeirah Lake Towers,3,6,14,91.2,0.92,referral,lost,61.66,WARM,Investment buyer,2024-04-11,2025-03-02
+L0078,Reem Al Shamsi,reem.77@email.com,+971 59 343 3383,1500000,studio,Al Barsha,2,6,10,19.3,0.84,referral,closed,56.42,WARM,Cash buyer,2024-01-28,2025-02-01
+L0079,Viktor Petrov,viktor.78@email.com,+971 53 813 8719,1000000,penthouse,Mirdif,5,9,3,29.2,0.77,referral,new,44.22,COLD,Relocating from abroad,2024-12-06,2025-02-14
+L0080,Amira Khalil,amira.79@email.com,+971 50 305 2800,750000,penthouse,Dubai Silicon Oasis,5,3,14,33.9,0.32,cold call,qualified,58.22,WARM,Price sensitive,2024-07-16,2025-03-12
+L0081,Thomas Anderson,thomas.80@email.com,+971 56 325 1891,1500000,penthouse,Palm Jumeirah,3,18,12,52.3,0.43,social media,contacted,42.45,COLD,Cash buyer,2024-10-01,2025-01-15
+L0082,Zainab Al Nuaimi,zainab.81@email.com,+971 59 101 6196,5000000,townhouse,Dubai Silicon Oasis,1,18,14,32.8,0.53,referral,qualified,55.74,WARM,Relocating from abroad,2024-05-22,2025-01-20
+L0083,Michael Chang,michael.82@email.com,+971 52 881 1546,750000,penthouse,Jumeirah Village Circle,1,9,15,94.4,0.97,exhibition,negotiating,55.24,WARM,Needs more info,2024-04-10,2025-03-27
+L0084,Hind Al Blooshi,hind.83@email.com,+971 50 520 3515,3500000,townhouse,Business Bay,1,18,14,9.0,0.13,cold call,negotiating,48.59,COLD,Relocating from abroad,2024-08-26,2025-03-23
+L0085,Jean-Pierre Dubois,jean-pierre.84@email.com,+971 55 723 3462,1500000,studio,Jumeirah,3,12,1,47.2,0.85,agent,closed,36.49,COLD,Investment buyer,2024-09-15,2025-02-24
+L0086,Salma Al Kaabi,salma.85@email.com,+971 58 969 9800,1000000,apartment,Jumeirah,2,6,3,31.1,0.3,exhibition,closed,35.7,COLD,In talks with other agents,2024-10-19,2025-02-20
+L0087,Robert Smith,robert.86@email.com,+971 56 205 9281,300000,villa,Al Quoz,5,2,10,71.5,0.74,cold call,proposal_sent,61.32,WARM,Pre-approved mortgage,2024-01-19,2025-01-07
+L0088,Dana Al Mazrouei,dana.87@email.com,+971 51 472 1250,750000,townhouse,Arabian Ranches,5,2,6,84.1,0.35,web,lost,48.2,COLD,Needs more info,2024-08-17,2025-03-23
+L0089,Arjun Kapoor,arjun.88@email.com,+971 57 238 4671,2500000,villa,Dubai Silicon Oasis,5,3,6,32.3,0.66,social media,contacted,61.06,WARM,In talks with other agents,2024-03-15,2025-02-11
+L0090,Leila Moradi,leila.89@email.com,+971 55 178 3794,500000,penthouse,DIFC,2,2,8,13.9,0.23,agent,new,59.74,WARM,Relocating from abroad,2024-03-19,2025-02-28
+L0091,Benjamin White,benjamin.90@email.com,+971 54 371 9001,1000000,townhouse,Jumeirah Lake Towers,3,9,2,46.4,0.67,web,new,27.65,COLD,Cash buyer,2024-12-05,2025-01-22
+L0092,Noura Al Suwaidi,noura.91@email.com,+971 54 349 4078,500000,studio,Al Quoz,5,3,5,92.9,0.46,agent,qualified,44.26,COLD,Pre-approved mortgage,2024-04-26,2025-01-13
+L0093,Ethan Davis,ethan.92@email.com,+971 59 783 6544,2500000,villa,Dubai Marina,1,2,8,77.0,0.61,agent,lost,67.71,WARM,"Very interested, ready to view",2024-11-21,2025-01-28
+L0094,Manal Al Habsi,manal.93@email.com,+971 50 734 2951,3500000,studio,Al Quoz,3,2,11,84.8,0.42,portal,qualified,65.42,WARM,Comparing options,2024-02-21,2025-01-25
+L0095,Ivan Kozlov,ivan.94@email.com,+971 54 538 5489,5000000,studio,Dubai Marina,0,9,5,12.4,0.37,exhibition,proposal_sent,40.48,COLD,"Very interested, ready to view",2024-12-14,2025-02-15
+L0096,Hessa Al Muhairi,hessa.95@email.com,+971 53 145 9669,5000000,studio,Palm Jumeirah,4,1,4,90.9,0.23,referral,closed,55.82,WARM,Needs more info,2024-06-09,2025-03-26
+L0097,William Taylor,william.96@email.com,+971 50 270 7672,2000000,townhouse,Downtown Dubai,2,18,10,87.2,0.93,referral,qualified,50.53,WARM,End user,2024-06-09,2025-01-17
+L0098,Shaikha Al Qemzi,shaikha.97@email.com,+971 50 116 5462,1000000,townhouse,Dubai Marina,0,12,13,77.5,0.93,exhibition,new,40.22,COLD,Pre-approved mortgage,2024-08-22,2025-01-27
+L0099,Rajesh Kumar,rajesh.98@email.com,+971 57 300 7514,2000000,villa,Al Barsha,5,1,1,34.2,0.97,web,lost,55.25,WARM,End user,2024-01-25,2025-01-25
+L0100,Nina Volkov,nina.99@email.com,+971 58 191 9016,2500000,apartment,Arabian Ranches,0,3,12,19.6,0.31,portal,closed,57.85,WARM,In talks with other agents,2024-10-07,2025-02-27
+L0101,Ahmed Al Mansoori,ahmed.100@email.com,+971 58 224 2313,750000,penthouse,Business Bay,2,3,14,43.9,0.73,cold call,new,56.9,WARM,Relocating from abroad,2024-06-08,2025-02-27
+L0102,Sarah Johnson,sarah.101@email.com,+971 54 597 4479,8000000,townhouse,Jumeirah Village Circle,4,12,6,87.3,0.52,cold call,new,46.2,COLD,Investment buyer,2024-04-06,2025-01-15
+L0103,Mohammed Al Rashidi,mohammed.102@email.com,+971 58 656 9513,750000,apartment,Dubai Silicon Oasis,3,3,11,16.7,0.45,social media,lost,60.61,WARM,Comparing options,2024-08-08,2025-03-05
+L0104,Priya Sharma,priya.103@email.com,+971 51 235 4645,3500000,studio,Al Quoz,2,2,6,66.3,0.69,agent,new,60.57,WARM,"Very interested, ready to view",2024-04-04,2025-03-05
+L0105,David Chen,david.104@email.com,+971 52 207 3409,300000,villa,Downtown Dubai,5,6,6,70.4,0.45,referral,closed,51.18,WARM,End user,2024-06-21,2025-01-28
+L0106,Fatima Al Zaabi,fatima.105@email.com,+971 52 970 6706,8000000,apartment,Jumeirah,4,2,11,56.0,0.96,web,contacted,76.32,HOT,Needs more info,2024-11-13,2025-02-06
+L0107,James Wilson,james.106@email.com,+971 57 472 8155,3500000,penthouse,Dubai Silicon Oasis,2,24,0,53.5,0.15,exhibition,closed,26.52,COLD,Investment buyer,2024-12-08,2025-03-15
+L0108,Aisha Al Hamdan,aisha.107@email.com,+971 59 135 5593,1000000,townhouse,Palm Jumeirah,4,9,13,46.6,0.96,agent,contacted,56.01,WARM,In talks with other agents,2024-04-05,2025-03-18
+L0109,Carlos Rodriguez,carlos.108@email.com,+971 52 306 6206,750000,apartment,Downtown Dubai,1,18,2,84.6,0.76,agent,contacted,34.28,COLD,Needs more info,2024-09-14,2025-01-18
+L0110,Li Wei,li.109@email.com,+971 58 180 4857,1500000,penthouse,Mirdif,3,1,7,44.4,0.19,social media,qualified,61.23,WARM,Comparing options,2024-11-06,2025-02-24
+L0111,Omar Al Maktoum,omar.110@email.com,+971 50 219 9431,2500000,villa,Dubai Hills Estate,0,9,7,39.8,0.67,cold call,proposal_sent,40.18,COLD,"Very interested, ready to view",2024-09-14,2025-03-26
+L0112,Emma Thompson,emma.111@email.com,+971 58 335 4003,1000000,penthouse,Arabian Ranches,1,18,10,47.7,0.48,exhibition,lost,41.77,COLD,Comparing options,2024-12-09,2025-02-08
+L0113,Khalid Al Marzouqi,khalid.112@email.com,+971 56 709 4870,3500000,penthouse,Jumeirah Village Circle,2,18,9,67.3,0.78,portal,qualified,50.14,WARM,End user,2024-04-08,2025-03-20
+L0114,Anya Patel,anya.113@email.com,+971 57 388 5959,300000,penthouse,Jumeirah Lake Towers,0,12,8,2.2,0.31,referral,proposal_sent,35.22,COLD,Relocating from abroad,2024-08-13,2025-02-24
+L0115,Marcus Brown,marcus.114@email.com,+971 58 401 2042,1000000,studio,Al Quoz,1,6,3,32.6,0.66,referral,lost,39.65,COLD,End user,2024-06-23,2025-01-27
+L0116,Layla Al Suwaidi,layla.115@email.com,+971 54 803 6561,1500000,penthouse,Dubai Marina,4,2,6,74.7,0.4,exhibition,negotiating,59.46,WARM,Cash buyer,2024-03-05,2025-01-10
+L0117,Ryan Mitchell,ryan.116@email.com,+971 59 533 2199,8000000,penthouse,Downtown Dubai,3,2,9,1.3,0.76,agent,qualified,77.33,HOT,Cash buyer,2024-06-16,2025-01-18
+L0118,Noor Al Hashimi,noor.117@email.com,+971 59 438 6715,1000000,penthouse,Jumeirah,3,18,5,16.2,0.86,social media,closed,39.27,COLD,"Very interested, ready to view",2024-03-12,2025-02-03
+L0119,Stefan Mueller,stefan.118@email.com,+971 57 620 6603,12000000,studio,Jumeirah,2,12,5,30.3,0.36,referral,negotiating,48.94,COLD,Price sensitive,2024-10-22,2025-03-17
+L0120,Mei Lin,mei.119@email.com,+971 54 930 5562,1500000,apartment,Jumeirah Village Circle,5,18,5,71.0,0.2,agent,negotiating,44.79,COLD,"Very interested, ready to view",2024-07-23,2025-02-14
+L0121,Abdullah Al Falasi,abdullah.120@email.com,+971 55 483 3637,5000000,villa,Dubai Silicon Oasis,1,24,7,18.5,0.18,exhibition,closed,43.81,COLD,End user,2024-05-05,2025-02-10
+L0122,Sofia Martinez,sofia.121@email.com,+971 55 392 4024,500000,penthouse,Dubai Marina,4,18,6,56.3,0.66,portal,closed,39.67,COLD,In talks with other agents,2024-07-26,2025-01-01
+L0123,Hassan Al Qassimi,hassan.122@email.com,+971 59 264 2736,5000000,townhouse,Jumeirah Village Circle,5,9,6,57.5,0.92,referral,closed,50.16,WARM,Relocating from abroad,2024-09-13,2025-02-24
+L0124,Yuki Tanaka,yuki.123@email.com,+971 55 972 1850,300000,apartment,Dubai Hills Estate,0,18,8,8.8,0.34,exhibition,qualified,33.18,COLD,Cash buyer,2024-06-23,2025-01-06
+L0125,Patrick O'Brien,patrick.124@email.com,+971 54 935 7900,1500000,villa,Mirdif,2,1,0,17.4,0.47,exhibition,proposal_sent,48.59,COLD,In talks with other agents,2024-07-01,2025-01-07
+L0126,Mariam Al Dhaheri,mariam.125@email.com,+971 50 177 3535,1000000,penthouse,Mirdif,2,9,7,79.6,0.61,portal,closed,47.04,COLD,Comparing options,2024-11-04,2025-02-10
+L0127,Alex Turner,alex.126@email.com,+971 52 741 8976,8000000,villa,Dubai Silicon Oasis,3,24,1,55.7,0.32,portal,closed,37.01,COLD,Investment buyer,2024-09-05,2025-02-07
+L0128,Reem Al Shamsi,reem.127@email.com,+971 54 490 2018,300000,townhouse,Business Bay,1,9,3,2.8,0.95,agent,negotiating,40.92,COLD,Needs more info,2024-07-04,2025-01-24
+L0129,Viktor Petrov,viktor.128@email.com,+971 59 830 5923,1000000,villa,Jumeirah,2,3,12,49.3,0.53,portal,new,59.57,WARM,"Very interested, ready to view",2024-05-25,2025-02-04
+L0130,Amira Khalil,amira.129@email.com,+971 52 794 5508,8000000,studio,Palm Jumeirah,1,18,8,4.9,0.67,web,lost,58.32,WARM,Price sensitive,2024-08-24,2025-03-26
+L0131,Thomas Anderson,thomas.130@email.com,+971 55 774 9664,5000000,villa,Mirdif,2,24,13,26.6,0.68,referral,closed,54.19,WARM,Relocating from abroad,2024-06-01,2025-02-01
+L0132,Zainab Al Nuaimi,zainab.131@email.com,+971 59 708 2643,2000000,apartment,Palm Jumeirah,3,2,11,74.0,0.45,referral,closed,62.99,WARM,Cash buyer,2024-11-24,2025-02-16
+L0133,Michael Chang,michael.132@email.com,+971 58 125 5065,2500000,penthouse,Business Bay,0,3,4,39.4,0.91,web,contacted,56.92,WARM,Pre-approved mortgage,2024-03-22,2025-03-13
+L0134,Hind Al Blooshi,hind.133@email.com,+971 50 861 2325,3500000,townhouse,Al Barsha,4,12,11,46.6,0.89,cold call,qualified,52.98,WARM,Investment buyer,2024-04-01,2025-02-17
+L0135,Jean-Pierre Dubois,jean-pierre.134@email.com,+971 57 354 9942,3500000,penthouse,Dubai Marina,3,3,6,69.8,0.12,exhibition,new,54.76,WARM,Investment buyer,2024-12-17,2025-03-26
+L0136,Salma Al Kaabi,salma.135@email.com,+971 59 951 3498,12000000,townhouse,Al Barsha,5,9,11,60.2,0.54,exhibition,qualified,67.26,WARM,End user,2024-06-27,2025-02-09
+L0137,Robert Smith,robert.136@email.com,+971 57 147 3686,8000000,villa,Dubai Silicon Oasis,3,18,13,50.9,0.55,portal,negotiating,54.52,WARM,"Very interested, ready to view",2024-04-07,2025-03-26
+L0138,Dana Al Mazrouei,dana.137@email.com,+971 58 429 7515,500000,studio,Jumeirah Village Circle,0,6,5,39.7,0.31,web,contacted,43.24,COLD,Comparing options,2024-09-17,2025-02-01
+L0139,Arjun Kapoor,arjun.138@email.com,+971 57 272 6587,1000000,apartment,Downtown Dubai,2,9,12,43.5,0.29,exhibition,closed,49.35,COLD,Pre-approved mortgage,2024-09-03,2025-01-22
+L0140,Leila Moradi,leila.139@email.com,+971 52 722 5447,300000,apartment,DIFC,2,1,9,72.0,0.57,web,qualified,56.17,WARM,Pre-approved mortgage,2024-03-11,2025-03-01
+L0141,Benjamin White,benjamin.140@email.com,+971 56 958 7356,500000,townhouse,Dubai Marina,0,1,0,26.0,0.71,portal,contacted,27.72,COLD,Relocating from abroad,2024-10-07,2025-03-27
+L0142,Noura Al Suwaidi,noura.141@email.com,+971 58 112 6617,5000000,penthouse,Palm Jumeirah,3,24,0,55.9,0.26,cold call,qualified,31.68,COLD,Cash buyer,2024-06-20,2025-03-16
+L0143,Ethan Davis,ethan.142@email.com,+971 59 670 4390,8000000,studio,Mirdif,2,9,15,16.3,0.41,exhibition,lost,63.67,WARM,"Very interested, ready to view",2024-08-08,2025-01-23
+L0144,Manal Al Habsi,manal.143@email.com,+971 51 700 5841,750000,penthouse,Downtown Dubai,3,3,1,2.0,0.32,cold call,qualified,37.85,COLD,In talks with other agents,2024-08-13,2025-03-19
+L0145,Ivan Kozlov,ivan.144@email.com,+971 57 801 3198,3500000,apartment,Arabian Ranches,5,3,1,43.9,0.83,referral,new,45.35,COLD,Pre-approved mortgage,2024-02-08,2025-03-09
+L0146,Hessa Al Muhairi,hessa.145@email.com,+971 57 682 9375,2500000,townhouse,Downtown Dubai,5,12,0,42.6,0.76,cold call,qualified,37.33,COLD,Price sensitive,2024-01-20,2025-02-23
+L0147,William Taylor,william.146@email.com,+971 56 412 9777,750000,penthouse,Dubai Hills Estate,0,2,4,60.0,0.24,web,qualified,42.38,COLD,End user,2024-02-02,2025-01-15
+L0148,Shaikha Al Qemzi,shaikha.147@email.com,+971 54 524 8537,8000000,villa,Jumeirah Village Circle,1,18,4,89.0,0.5,agent,qualified,36.66,COLD,Needs more info,2024-07-26,2025-02-12
+L0149,Rajesh Kumar,rajesh.148@email.com,+971 51 358 9747,2500000,studio,Dubai Silicon Oasis,2,18,1,82.7,0.98,web,contacted,37.17,COLD,Comparing options,2024-06-14,2025-03-01
+L0150,Nina Volkov,nina.149@email.com,+971 50 409 2595,500000,apartment,Jumeirah Village Circle,1,3,3,24.5,0.22,referral,contacted,41.26,COLD,Needs more info,2024-07-03,2025-01-02
+L0151,Ahmed Al Mansoori,ahmed.150@email.com,+971 54 440 5608,2000000,penthouse,Jumeirah,1,9,12,18.4,0.83,portal,proposal_sent,50.32,WARM,"Very interested, ready to view",2024-03-27,2025-01-16
+L0152,Sarah Johnson,sarah.151@email.com,+971 57 209 7593,2500000,townhouse,Al Barsha,0,9,6,34.1,0.93,social media,contacted,40.41,COLD,In talks with other agents,2024-06-18,2025-01-05
+L0153,Mohammed Al Rashidi,mohammed.152@email.com,+971 50 453 9045,2500000,studio,Dubai Hills Estate,0,6,4,37.0,0.82,social media,lost,49.88,COLD,Pre-approved mortgage,2024-04-08,2025-03-03
+L0154,Priya Sharma,priya.153@email.com,+971 56 351 9375,3500000,studio,Jumeirah Lake Towers,4,18,2,4.1,0.91,social media,closed,35.99,COLD,In talks with other agents,2024-04-25,2025-01-27
+L0155,David Chen,david.154@email.com,+971 59 807 1792,1000000,penthouse,Mirdif,3,6,12,47.0,0.5,referral,lost,56.04,WARM,"Very interested, ready to view",2024-07-24,2025-03-14
+L0156,Fatima Al Zaabi,fatima.155@email.com,+971 50 685 1386,8000000,studio,Downtown Dubai,4,18,9,94.4,0.59,agent,contacted,59.07,WARM,Price sensitive,2024-04-21,2025-01-25
+L0157,James Wilson,james.156@email.com,+971 52 866 8297,3500000,penthouse,Jumeirah Lake Towers,1,6,13,85.4,0.79,portal,contacted,68.54,WARM,Needs more info,2024-03-05,2025-01-15
+L0158,Aisha Al Hamdan,aisha.157@email.com,+971 52 329 2731,8000000,villa,Downtown Dubai,1,1,15,22.0,0.13,web,closed,69.78,WARM,Comparing options,2024-07-13,2025-02-23
+L0159,Carlos Rodriguez,carlos.158@email.com,+971 50 165 2864,12000000,villa,Mirdif,2,2,7,89.7,0.15,social media,qualified,65.72,WARM,"Very interested, ready to view",2024-01-03,2025-03-21
+L0160,Li Wei,li.159@email.com,+971 57 488 1571,2500000,townhouse,Al Barsha,4,6,5,64.7,0.57,portal,proposal_sent,50.38,WARM,Relocating from abroad,2024-08-14,2025-03-10
+L0161,Omar Al Maktoum,omar.160@email.com,+971 56 580 1236,500000,townhouse,Al Quoz,3,12,10,38.6,0.74,social media,new,41.24,COLD,End user,2024-01-08,2025-01-14
+L0162,Emma Thompson,emma.161@email.com,+971 57 599 1805,5000000,penthouse,Dubai Silicon Oasis,4,6,6,53.1,0.94,cold call,new,50.75,WARM,Pre-approved mortgage,2024-10-03,2025-03-16
+L0163,Khalid Al Marzouqi,khalid.162@email.com,+971 51 531 6210,300000,studio,Downtown Dubai,2,18,6,48.3,0.55,social media,proposal_sent,36.98,COLD,In talks with other agents,2024-01-21,2025-02-03
+L0164,Anya Patel,anya.163@email.com,+971 52 244 3905,5000000,studio,Dubai Marina,2,3,14,87.2,0.54,exhibition,closed,65.62,WARM,Needs more info,2024-06-05,2025-01-24
+L0165,Marcus Brown,marcus.164@email.com,+971 50 947 4095,500000,apartment,Al Quoz,3,9,9,95.5,0.52,social media,qualified,49.82,COLD,End user,2024-11-04,2025-02-20
+L0166,Layla Al Suwaidi,layla.165@email.com,+971 55 695 8929,300000,villa,Palm Jumeirah,1,18,1,92.4,0.17,portal,new,14.72,COLD,Comparing options,2024-11-05,2025-03-27
+L0167,Ryan Mitchell,ryan.166@email.com,+971 53 274 1168,750000,penthouse,Jumeirah,5,12,13,41.4,0.86,agent,new,46.35,COLD,Relocating from abroad,2024-12-13,2025-01-01
+L0168,Noor Al Hashimi,noor.167@email.com,+971 58 102 8060,1000000,studio,Jumeirah,5,12,2,31.9,0.97,exhibition,proposal_sent,34.37,COLD,Relocating from abroad,2024-01-23,2025-01-03
+L0169,Stefan Mueller,stefan.168@email.com,+971 59 323 7285,500000,villa,Al Quoz,4,6,11,36.8,0.58,portal,new,50.18,WARM,Comparing options,2024-09-12,2025-02-11
+L0170,Mei Lin,mei.169@email.com,+971 57 679 4424,1500000,villa,DIFC,2,2,5,53.5,0.58,exhibition,new,56.5,WARM,Price sensitive,2024-08-23,2025-01-08
+L0171,Abdullah Al Falasi,abdullah.170@email.com,+971 56 614 5984,2000000,studio,Jumeirah Village Circle,0,6,10,30.5,0.39,social media,new,54.06,WARM,Cash buyer,2024-06-19,2025-01-01
+L0172,Sofia Martinez,sofia.171@email.com,+971 54 429 4064,5000000,apartment,Dubai Hills Estate,3,2,12,94.4,1.0,exhibition,contacted,73.15,WARM,Relocating from abroad,2024-03-27,2025-03-25
+L0173,Hassan Al Qassimi,hassan.172@email.com,+971 53 686 1810,2000000,penthouse,Business Bay,3,12,6,20.9,0.77,agent,negotiating,36.39,COLD,Needs more info,2024-07-01,2025-03-05
+L0174,Yuki Tanaka,yuki.173@email.com,+971 50 253 8400,2000000,apartment,Jumeirah Village Circle,3,12,15,64.4,0.9,portal,lost,50.82,WARM,Relocating from abroad,2024-12-07,2025-01-19
+L0175,Patrick O'Brien,patrick.174@email.com,+971 56 770 7134,300000,studio,Downtown Dubai,1,24,14,94.4,0.42,portal,closed,47.87,COLD,End user,2024-12-11,2025-03-25
+L0176,Mariam Al Dhaheri,mariam.175@email.com,+971 57 893 1513,3500000,townhouse,Jumeirah,0,6,7,5.4,0.99,social media,closed,48.23,COLD,In talks with other agents,2024-03-28,2025-03-25
+L0177,Alex Turner,alex.176@email.com,+971 59 594 2629,300000,villa,Dubai Marina,3,6,1,73.8,0.8,exhibition,qualified,35.61,COLD,In talks with other agents,2024-06-11,2025-02-10
+L0178,Reem Al Shamsi,reem.177@email.com,+971 59 936 5896,1000000,townhouse,Al Quoz,3,6,15,40.6,0.74,exhibition,new,66.19,WARM,Needs more info,2024-02-27,2025-03-23
+L0179,Viktor Petrov,viktor.178@email.com,+971 53 666 4644,500000,townhouse,Jumeirah Village Circle,2,12,14,62.1,0.93,agent,contacted,53.16,WARM,Price sensitive,2024-09-17,2025-02-15
+L0180,Amira Khalil,amira.179@email.com,+971 54 325 4988,1000000,townhouse,Jumeirah Lake Towers,3,1,3,79.3,0.93,web,negotiating,57.35,WARM,Pre-approved mortgage,2024-12-05,2025-02-06
+L0181,Thomas Anderson,thomas.180@email.com,+971 51 105 1494,750000,apartment,Palm Jumeirah,3,9,2,64.9,0.21,social media,new,31.36,COLD,Price sensitive,2024-07-17,2025-02-21
+L0182,Zainab Al Nuaimi,zainab.181@email.com,+971 57 865 5045,8000000,villa,Palm Jumeirah,2,12,3,6.0,0.85,exhibition,new,46.34,COLD,"Very interested, ready to view",2024-05-12,2025-02-10
+L0183,Michael Chang,michael.182@email.com,+971 58 574 5512,3500000,villa,Downtown Dubai,0,12,11,22.8,0.41,web,contacted,45.75,COLD,End user,2024-01-24,2025-03-22
+L0184,Hind Al Blooshi,hind.183@email.com,+971 51 108 1540,500000,villa,Arabian Ranches,1,1,2,71.9,0.42,exhibition,negotiating,47.77,COLD,In talks with other agents,2024-12-21,2025-01-18
+L0185,Jean-Pierre Dubois,jean-pierre.184@email.com,+971 57 699 1128,1500000,apartment,Mirdif,5,12,0,23.5,0.4,exhibition,qualified,20.18,COLD,End user,2024-03-12,2025-01-03
+L0186,Salma Al Kaabi,salma.185@email.com,+971 53 966 5338,500000,penthouse,Mirdif,1,24,4,15.3,0.53,agent,new,40.55,COLD,Relocating from abroad,2024-07-09,2025-03-20
+L0187,Robert Smith,robert.186@email.com,+971 55 670 3032,2000000,penthouse,Jumeirah Lake Towers,5,24,13,83.0,1.0,agent,new,51.35,WARM,Pre-approved mortgage,2024-07-16,2025-03-15
+L0188,Dana Al Mazrouei,dana.187@email.com,+971 57 874 3694,2000000,studio,Jumeirah Village Circle,4,3,15,77.3,0.62,referral,qualified,58.07,WARM,Relocating from abroad,2024-06-08,2025-02-26
+L0189,Arjun Kapoor,arjun.188@email.com,+971 54 217 2764,1000000,villa,Dubai Silicon Oasis,3,6,8,87.9,0.16,web,negotiating,46.91,COLD,Pre-approved mortgage,2024-08-12,2025-01-08
+L0190,Leila Moradi,leila.189@email.com,+971 59 246 4273,3500000,townhouse,Business Bay,0,2,8,14.2,0.96,cold call,new,57.63,WARM,Comparing options,2024-12-04,2025-03-04
+L0191,Benjamin White,benjamin.190@email.com,+971 58 156 9762,500000,villa,Mirdif,3,12,5,72.3,0.29,agent,closed,34.72,COLD,End user,2024-12-10,2025-02-27
+L0192,Noura Al Suwaidi,noura.191@email.com,+971 55 155 2324,5000000,apartment,Al Quoz,0,24,4,74.3,0.15,referral,qualified,27.0,COLD,"Very interested, ready to view",2024-09-18,2025-02-28
+L0193,Ethan Davis,ethan.192@email.com,+971 52 889 3073,2000000,penthouse,Dubai Hills Estate,3,9,9,8.8,0.95,web,closed,56.13,WARM,Price sensitive,2024-05-15,2025-01-26
+L0194,Manal Al Habsi,manal.193@email.com,+971 54 259 8439,5000000,studio,Al Barsha,2,3,14,85.1,0.97,social media,closed,66.62,WARM,In talks with other agents,2024-04-07,2025-02-17
+L0195,Ivan Kozlov,ivan.194@email.com,+971 57 658 8053,8000000,penthouse,Jumeirah Lake Towers,5,12,2,56.0,0.45,web,contacted,41.19,COLD,Needs more info,2024-11-06,2025-03-14
+L0196,Hessa Al Muhairi,hessa.195@email.com,+971 59 732 4249,8000000,townhouse,Al Quoz,1,6,12,4.5,0.91,exhibition,qualified,66.37,WARM,Relocating from abroad,2024-02-18,2025-03-14
+L0197,William Taylor,william.196@email.com,+971 54 827 3538,12000000,studio,Business Bay,5,6,0,76.4,0.8,cold call,negotiating,51.13,WARM,Needs more info,2024-03-18,2025-02-20
+L0198,Shaikha Al Qemzi,shaikha.197@email.com,+971 51 309 7815,5000000,apartment,Al Barsha,0,1,0,13.2,0.72,social media,negotiating,53.22,WARM,Price sensitive,2024-03-19,2025-03-16
+L0199,Rajesh Kumar,rajesh.198@email.com,+971 56 945 1510,300000,studio,Jumeirah Village Circle,2,24,15,10.1,0.51,social media,negotiating,47.89,COLD,In talks with other agents,2024-10-11,2025-02-11
+L0200,Nina Volkov,nina.199@email.com,+971 59 447 9717,2000000,penthouse,Dubai Marina,4,9,12,81.4,0.11,cold call,negotiating,45.49,COLD,In talks with other agents,2024-11-23,2025-02-16

@@ -1,0 +1,17 @@
+PROPAI REAL ESTATE — PROPERTY PORTFOLIO INDEX
+==============================================
+Last Updated: 2025
+
+AVAILABLE PROPERTIES:
+P001 | 3BR Villa         | Dubai Hills Estate     | AED 2,150,000
+P002 | 2BR Apartment     | Dubai Marina           | AED 1,350,000
+P003 | 1BR Apartment     | Jumeirah Lake Towers   | AED   680,000
+P004 | 4BR Townhouse     | Arabian Ranches        | AED 3,200,000
+P005 | Studio            | Downtown Dubai         | AED   920,000
+P006 | 3BR Apartment     | Business Bay           | AED 1,850,000
+P007 | 5BR Palm Villa    | Palm Jumeirah          | AED 8,500,000
+P008 | 2BR Townhouse     | Mirdif                 | AED 1,100,000
+P009 | 3BR Penthouse     | Dubai Marina           | AED 4,200,000
+P010 | 1BR Apartment     | JVC                    | AED   550,000
+
+CONTACT: sales@propai.ae | +971 4 XXX XXXX | RERA: XXXXX
