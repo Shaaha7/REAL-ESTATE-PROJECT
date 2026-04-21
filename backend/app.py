@@ -139,8 +139,15 @@ async def dashboard_stats():
             "ragas_faithfulness":0.97,"hallucination_rate":0.018,"avg_latency_ms":42,"daily_requests":1284,
             "lead_conversion_rate":15.4,"avg_lead_score":61.3,"revenue_pipeline_aed":48_500_000,"deals_closed_this_month":7}
 
-if __name__=="__main__":
-    uvicorn.run("app:app",host=settings.api_host,port=settings.api_port,reload=True)
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "app:app",
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8000))
+    )
 
 # ── NEW: Valuation endpoint ────────────────────────────────────────────────────
 class ValuationReq(BaseModel):
