@@ -267,7 +267,7 @@ Docker
 
 # 👨‍💻 Author
 
-**Niranjan**
+**Shabeer Ahamed**
 
 Autonomous Real Estate AI Platform Developer
 Multi-Agent LLM Systems • Applied AI • Production ML Pipelines
