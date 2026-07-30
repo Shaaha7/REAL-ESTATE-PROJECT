@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
     google_api_key: str = ""
-    gemini_model: str = "gemini-1.5-flash-latest"
+    gemini_model: str = "gemini-flash-latest"
     groq_api_key: str = ""
     groq_model: str = "llama-3.3-70b-versatile"
     llm_provider: str = "gemini"
@@ -28,8 +28,8 @@ class Settings(BaseSettings):
     faiss_index_path: str = "data/documents/faiss_index"
     chunk_size: int = 512
     chunk_overlap: int = 64
-    top_k_final: int = 5
-    min_score_threshold: float = 0.25
+    top_k_final: int = 6
+    min_score_threshold: float = 0.15
 
     @property
     def mysql_url(self) -> str:

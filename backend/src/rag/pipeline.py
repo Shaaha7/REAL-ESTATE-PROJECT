@@ -1,5 +1,5 @@
 from __future__ import annotations
-import hashlib, pickle
+import hashlib, pickle, re
 from pathlib import Path
 from typing import Optional
 import faiss, numpy as np
@@ -9,6 +9,16 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 from src.utils.settings import get_settings
 from src.utils.llm_client import LLMClient
 from src.prompts.templates import build_rag_prompt
+
+def _normalise_query(query: str) -> str:
+    """Resolves 'AED 20 million' / '20M' / '500K' style budget phrasing to a
+    canonical '<number> AED' form so it embeds closer to how the knowledge
+    base documents express the same amounts."""
+    q = query.strip()
+    q = re.sub(r'(\d+(?:\.\d+)?)\s*million', lambda m: f"{float(m.group(1))*1_000_000:.0f} AED {m.group(0)}", q, flags=re.IGNORECASE)
+    q = re.sub(r'(\d+(?:\.\d+)?)\s*M\b', lambda m: f"{float(m.group(1))*1_000_000:.0f} AED {m.group(0)}", q)
+    q = re.sub(r'(\d+(?:\.\d+)?)\s*[Kk]\b', lambda m: f"{float(m.group(1))*1_000:.0f} AED {m.group(0)}", q)
+    return q
 
 class Document:
     def __init__(self, doc_id: str, content: str, metadata: dict | None = None):
@@ -37,19 +47,21 @@ class RAGPipeline:
             self._reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
         return self._reranker
 
-    def _chunk(self, text: str, source: str) -> list[Document]:
-        size = self.settings.chunk_size * 4; overlap = self.settings.chunk_overlap * 4
+    def _chunk(self, text: str, source: str, source_type: str = "knowledge") -> list[Document]:
+        # brochures are shorter/denser - smaller chunks keep retrieval more focused
+        size = (self.settings.chunk_size * 5) if source_type == "knowledge" else (self.settings.chunk_size * 3)
+        overlap = self.settings.chunk_overlap * 4
         chunks, start, idx = [], 0, 0
         while start < len(text):
             end = min(start+size, len(text))
             doc_id = hashlib.md5(f"{source}:{idx}".encode()).hexdigest()[:12]
-            chunks.append(Document(doc_id, text[start:end], {"source":source,"chunk_idx":idx}))
+            chunks.append(Document(doc_id, text[start:end], {"source":source,"chunk_idx":idx,"source_type":source_type}))
             start += size - overlap; idx += 1
         return chunks
 
     def build_index(self, documents: list[dict]) -> None:
         logger.info(f"Building index from {len(documents)} docs…")
-        all_chunks = [c for d in documents for c in self._chunk(d["content"], d.get("source","doc"))]
+        all_chunks = [c for d in documents for c in self._chunk(d["content"], d.get("source","doc"), d.get("source_type","knowledge"))]
         self._docs = all_chunks; texts = [d.content for d in all_chunks]
         embs = self.embedder.encode(texts, batch_size=32, normalize_embeddings=True, show_progress_bar=False).astype(np.float32)
         self._index = faiss.IndexFlatIP(embs.shape[1]); self._index.add(embs)
@@ -95,9 +107,19 @@ class RAGPipeline:
         if self._index is None:
             if not self.load_index():
                 return {"answer":"Knowledge base not indexed. Index will be built on startup with real documents.","sources":[],"confidence":0.0,"answer_found_in_context":False}
-        dense = self._dense(question); sparse = self._sparse(question)
+
+        normalised_q = _normalise_query(question)
+        dense = self._dense(normalised_q); sparse = self._sparse(normalised_q)
+        if normalised_q != question:
+            # also search the raw question so we don't lose non-budget matches
+            dense2 = self._dense(question); sparse2 = self._sparse(question)
+            seen = {doc.doc_id for doc,_ in dense}
+            dense += [(doc,s) for doc,s in dense2 if doc.doc_id not in seen]
+            seen = {doc.doc_id for doc,_ in sparse}
+            sparse += [(doc,s) for doc,s in sparse2 if doc.doc_id not in seen]
+
         merged = self._merge(dense, sparse)
-        top_k = self._rerank(question, merged, self.settings.top_k_final)
+        top_k = self._rerank(normalised_q, merged, self.settings.top_k_final)
         if not top_k:
             return {"answer":"No relevant documents found for this query.","sources":[],"confidence":0.0,"answer_found_in_context":False}
         context = "\n\n---\n\n".join(f"[{doc.doc_id}] (source: {doc.metadata.get('source','?')}) {doc.content}" for doc,_ in top_k)
@@ -105,6 +127,7 @@ class RAGPipeline:
         if isinstance(result,dict):
             result["retrieved_chunks"]=[doc.doc_id for doc,_ in top_k]
             result["rerank_scores"]=[round(s,4) for _,s in top_k]
+            result["contexts"]=[doc.content for doc,_ in top_k]
         return result
 
     def load_documents_from_dir(self, dir_path: str) -> int:
@@ -113,8 +136,23 @@ class RAGPipeline:
         for txt_file in sorted(p.glob("**/*.txt")):
             content = txt_file.read_text(encoding="utf-8", errors="ignore")
             if content.strip():
-                docs.append({"content": content, "source": txt_file.name})
+                source_type = "brochure" if "brochure" in txt_file.parent.name.lower() else "knowledge"
+                docs.append({"content": content, "source": txt_file.name, "source_type": source_type})
         if docs:
             self.build_index(docs)
             logger.success(f"Indexed {len(docs)} documents from {dir_path}")
+        return len(docs)
+
+    def rebuild_from_all_docs(self) -> int:
+        """Rebuild the index from every .txt file under data/documents/**, tagging
+        brochure vs knowledge source_type. Used by POST /api/rag/rebuild."""
+        base = Path("data/documents"); docs = []
+        for txt_file in sorted(base.glob("**/*.txt")):
+            content = txt_file.read_text(encoding="utf-8", errors="ignore")
+            if content.strip():
+                source_type = "brochure" if "brochure" in txt_file.parent.name.lower() else "knowledge"
+                docs.append({"content": content, "source": txt_file.name, "source_type": source_type})
+        if docs:
+            self.build_index(docs)
+            logger.success(f"Full rebuild: {len(docs)} documents indexed")
         return len(docs)

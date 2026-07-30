@@ -1,0 +1,94 @@
+PROPERTY NEGOTIATION AND TRANSACTION PROCESS — UAE
+====================================================
+
+STEP 1: UNDERSTANDING THE LISTING PRICE
+
+In UAE, listing prices are always in AED (Arab Emirates Dirham).
+Prices are typically quoted as:
+- Total price: "AED 2.5 million" or "2,500,000 AED" or "AED 2.5M"
+- Per square foot: "AED 1,500 per sqft"
+
+Never confuse: AED prices with USD prices (1 USD = 3.67 AED)
+Example: A "2 million property" in UAE = AED 2,000,000 = approximately USD 545,000
+
+NEGOTIATION LEVERAGE:
+Cash buyers: 5-10% negotiation room on asking price
+Mortgage buyers: 3-5% negotiation room
+Hot market: 0-2% (seller has leverage when high demand)
+Slow market: Up to 15% (buyer has leverage)
+
+WHAT AFFECTS NEGOTIATION:
+- How long property has been listed (check listing date on portals)
+- Seller's motivation (personal reasons, need cash, relocation)
+- Comparable sales in same building/community (check DLD)
+- Condition of property vs comparable
+
+CHECKING COMPARABLE SALES (DLD TRANSACTION HISTORY):
+Go to: dubaipropertydata.com or Dubai REST app or DLD website
+Search: Property address or community name
+Filter: Last 3-6 months of transactions
+This gives you ACTUAL sold prices, not asking prices
+
+MAKING AN OFFER:
+Offer is typically verbal first through your agent
+Then confirmed in writing
+With 10% deposit cheque (held by agent until MOU signed)
+
+MEMORANDUM OF UNDERSTANDING (MOU / FORM F):
+Official contract between buyer and seller:
+- Standard form: RERA Form F
+- Price, deposit paid, completion date
+- What is included (furniture, parking, storage)
+- Who pays NOC fee
+- Penalties for default (typically 10% of purchase price)
+- Time limit to complete (typically 30-60 days for cash, 90 days for mortgage)
+
+DEPOSIT:
+Standard: 10% of purchase price
+Held by: Licensed real estate agent (in their client account)
+If buyer defaults: Seller keeps 10% deposit
+If seller defaults: Buyer gets 10% deposit back + can claim damages
+
+PRE-TRANSFER CHECKLIST:
+□ NOC obtained from developer (5-15 working days)
+□ Outstanding service charges paid by seller
+□ Mortgage offer letter received (if financed)
+□ Both parties arranged power of attorney (if not attending in person)
+□ Manager's cheques prepared for DLD transfer day:
+  - Cheque to seller for balance payment
+  - Cheque to DLD for transfer fee (4%)
+  - Cheque to agency (commission)
+  - Cheque for DLD admin fees
+
+TRANSFER DAY AT DLD (DUBAI LAND DEPARTMENT):
+Location: Various DLD offices across Dubai (Deira main office or satellite offices)
+Timing: Book appointment in advance (DLD website)
+Duration: 30-90 minutes depending on property and payment type
+Required at DLD:
+- Seller (or POA holder) with original passport
+- Buyer (or POA holder) with original passport
+- Original title deed
+- NOC from developer
+- All manager's cheques
+Result: New title deed issued in buyer's name on same day or within 1-3 days
+
+PROTECTING YOURSELF:
+1. Always use a RERA-licensed agent (verify on Dubai REST app)
+2. Never pay cash directly to seller — always through official channels
+3. Verify seller is the actual title deed holder (check DLD, ask to see title deed)
+4. Do not sign MOU without reading carefully (or get lawyer to review)
+5. Get independent mortgage advice (not just from seller's agent)
+6. Check outstanding service charges before completion (seller must clear all)
+7. For AED 5M+ transactions: consider hiring a UAE property lawyer (AED 5,000-15,000)
+
+TIMELINE EXPECTATIONS:
+Simple cash purchase: 2-4 weeks from offer to title deed
+Standard cash purchase: 4-6 weeks
+Mortgage purchase: 6-10 weeks
+Off-plan transfer: 2-4 weeks from NOC receipt
+
+COMMON ISSUES AND SOLUTIONS:
+Issue: NOC delayed → Solution: Follow up directly with developer, agent to escalate
+Issue: Bank valuation lower than agreed price → Solution: Renegotiate with seller or increase down payment
+Issue: Seller trying to back out → Solution: MOU penalty clause protects you (they owe you 10% + potential damages)
+Issue: Unexpected service charge arrears → Solution: Seller must clear before transfer, withhold from final payment

@@ -124,7 +124,7 @@ async def list_documents():
     return {"documents":docs,"total":len(docs)}
 
 @app.get("/api/evaluation/ragas", tags=["Evaluation"])
-async def ragas_eval(): return RAGASEvaluator(rag_pipeline=_rag).run_evaluation(use_ragas=False)
+async def ragas_eval(): return RAGASEvaluator(rag_pipeline=_rag).run_evaluation()
 
 @app.get("/api/metrics", tags=["Observability"])
 async def metrics(): return {"rag_chunks":len(_rag._docs) if _rag else 0,"lead_model_loaded":_lead is not None,"provider":settings.llm_provider,"model":settings.active_model,"api_key_configured":bool(settings.active_api_key)}
@@ -138,9 +138,19 @@ async def dashboard_stats():
         with open(leads_path) as f: leads=json.load(f)
         hot=sum(1 for l in leads if l["tier"]=="HOT"); warm=sum(1 for l in leads if l["tier"]=="WARM"); cold=sum(1 for l in leads if l["tier"]=="COLD")
     else: hot,warm,cold=38,89,120
+
+    ragas_path=Path("data/evaluation/ragas_results.json")
+    ragas_faithfulness=hallucination_rate=None
+    ragas_evaluated=False
+    if ragas_path.exists():
+        with open(ragas_path) as f: ragas_summary=json.load(f).get("summary",{})
+        ragas_faithfulness=ragas_summary.get("faithfulness"); hallucination_rate=ragas_summary.get("hallucination_rate")
+        ragas_evaluated=ragas_faithfulness is not None
+
     return {"total_leads":hot+warm+cold,"hot_leads":hot,"warm_leads":warm,"cold_leads":cold,
             "total_properties":len(DEMO_PROPERTIES),"available_properties":len(DEMO_PROPERTIES),
-            "ragas_faithfulness":0.97,"hallucination_rate":0.018,"avg_latency_ms":42,"daily_requests":1284,
+            "ragas_faithfulness":ragas_faithfulness,"hallucination_rate":hallucination_rate,"ragas_evaluated":ragas_evaluated,
+            "avg_latency_ms":42,"daily_requests":1284,
             "lead_conversion_rate":15.4,"avg_lead_score":61.3,"revenue_pipeline_aed":48_500_000,"deals_closed_this_month":7}
 
 import os
@@ -189,7 +199,7 @@ async def compare_props(req: CompareReq):
 @app.post("/api/rag/rebuild", tags=["RAG"])
 async def rebuild_rag():
     if not _rag: raise HTTPException(503, "RAG not ready")
-    n = _rag.rebuild_from_all_docs() if hasattr(_rag, "rebuild_from_all_docs") else 0
+    n = _rag.rebuild_from_all_docs()
     return {"status": "rebuilt", "documents": n, "chunks": len(_rag._docs)}
 
 # ── NEW: Lead statistics ───────────────────────────────────────────────────────
