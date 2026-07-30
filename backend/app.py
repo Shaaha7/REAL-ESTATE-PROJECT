@@ -32,9 +32,7 @@ async def lifespan(app: FastAPI):
     _rag=RAGPipeline()
     if not _rag.load_index():
         logger.info("Building RAG index from documents…")
-        doc_dirs = ["data/documents/rag_knowledge","data/documents/brochures"]
-        for d in doc_dirs:
-            if Path(d).exists(): _rag.load_documents_from_dir(d)
+        _rag.rebuild_from_all_docs()
     _orch=OrchestratorAgent()
     logger.success(f"All agents ready ✓ | Provider: {settings.llm_provider} | RAG chunks: {len(_rag._docs)}")
     yield
