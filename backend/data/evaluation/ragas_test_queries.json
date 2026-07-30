@@ -1,92 +1,347 @@
 [
   {
-    "id": "Q001",
-    "question": "What are the DLD transfer fees for buying property in Dubai?",
-    "ground_truth": "4% of purchase price plus admin fees (AED 4,000 for properties under AED 500K, AED 580 for above)",
-    "category": "DLD Fees"
+    "question": "What is the typical split of the property transfer fee between the buyer and seller?",
+    "ground_truth": "2% and 2%",
+    "source_doc": "01_dld_fees_and_transactions.txt"
   },
   {
-    "id": "Q002",
-    "question": "What is the minimum mortgage down payment for expats in Dubai?",
-    "ground_truth": "25% LTV for first property up to AED 5M (UAE residents/expats), 30% for non-residents",
-    "category": "Mortgage"
+    "question": "What is the minimum mortgage registration fee?",
+    "ground_truth": "AED 1,000",
+    "source_doc": "01_dld_fees_and_transactions.txt"
   },
   {
-    "id": "Q003",
-    "question": "How do I get a Golden Visa through property investment?",
-    "ground_truth": "Purchase property worth AED 2 million or more, fully paid (not mortgaged), apply through GDRFA or ICA",
-    "category": "Golden Visa"
+    "question": "What is the time limit for completing title deed registration after signing the MOU?",
+    "ground_truth": "30 days",
+    "source_doc": "01_dld_fees_and_transactions.txt"
   },
   {
-    "id": "Q004",
-    "question": "What documents are needed for off-plan property purchase?",
-    "ground_truth": "Passport, Emirates ID (residents), signed SPA, proof of funds or mortgage pre-approval, developer RERA number",
-    "category": "Off-Plan"
+    "question": "What is the maximum LTV for a first property above AED 5M for UAE Nationals?",
+    "ground_truth": "70%",
+    "source_doc": "02_mortgage_regulations_uae.txt"
   },
   {
-    "id": "Q005",
-    "question": "Which areas in Dubai can foreigners buy freehold property?",
-    "ground_truth": "Dubai Marina, Downtown Dubai, Palm Jumeirah, JLT, Business Bay, Arabian Ranches, Dubai Hills, JVC, DIFC and other designated zones",
-    "category": "Freehold"
+    "question": "What is the maximum Debt Burden Ratio mandated by the UAE Central Bank?",
+    "ground_truth": "50% of gross monthly income",
+    "source_doc": "02_mortgage_regulations_uae.txt"
   },
   {
-    "id": "Q006",
-    "question": "What does RERA regulate in Dubai real estate?",
-    "ground_truth": "RERA regulates developer registration, broker licensing, rental regulations (RERA index), escrow accounts, dispute resolution, and Owners Associations",
-    "category": "RERA"
+    "question": "How long is a mortgage pre-approval typically valid for?",
+    "ground_truth": "60-90 days",
+    "source_doc": "02_mortgage_regulations_uae.txt"
   },
   {
-    "id": "Q007",
-    "question": "How are service charges calculated for apartments?",
-    "ground_truth": "Per square foot per year, varies by location: Downtown AED 18-25/sqft, Marina AED 12-18/sqft, JVC AED 10-14/sqft",
-    "category": "Service Charges"
+    "question": "What type of ownership gives the buyer full ownership rights over the property and the land it sits on, indefinitely?",
+    "ground_truth": "Freehold ownership",
+    "source_doc": "03_freehold_areas_dubai.txt"
   },
   {
-    "id": "Q008",
-    "question": "What is the maximum rent increase allowed in Dubai?",
-    "ground_truth": "Based on RERA index: 0% if within 10%, up to 5% if 11-20% below, 10% if 21-30% below, 15% if 31-40% below, 20% if more than 40% below market",
-    "category": "Rental"
+    "question": "In which areas can foreign nationals own property in Dubai?",
+    "ground_truth": "Designated zones",
+    "source_doc": "03_freehold_areas_dubai.txt"
   },
   {
-    "id": "Q009",
-    "question": "What are the total transaction costs when buying property in Dubai?",
-    "ground_truth": "Approximately 7-8% of purchase price: 4% DLD transfer, 2% agent commission, mortgage fees, title deed, admin fees",
-    "category": "Transaction Costs"
+    "question": "What is the approximate gross yield for properties in Dubai Marina in 2024?",
+    "ground_truth": "5-7%",
+    "source_doc": "03_freehold_areas_dubai.txt"
   },
   {
-    "id": "Q010",
-    "question": "What is Ejari and when is it required?",
-    "ground_truth": "Ejari is RERA's tenancy registration system. All rental contracts must be registered within 30 days for DEWA, visa renewal, school enrollment",
-    "category": "Rental"
+    "question": "What year was RERA established?",
+    "ground_truth": "2007",
+    "source_doc": "04_rera_regulations.txt"
   },
   {
-    "id": "Q011",
-    "question": "What are the advantages of buying off-plan in Dubai?",
-    "ground_truth": "Lower entry price (15-30% below market), flexible payment plans, capital appreciation during construction, choice of unit and finishes",
-    "category": "Off-Plan"
+    "question": "What is the registration fee for Ejari?",
+    "ground_truth": "AED 195 (service centers) or AED 155 (online)",
+    "source_doc": "04_rera_regulations.txt"
   },
   {
-    "id": "Q012",
-    "question": "What is the NOC and when is it needed?",
-    "ground_truth": "No Objection Certificate from developer required when selling in managed community or under mortgage. Takes 5-15 working days, costs AED 500-5,000",
-    "category": "NOC"
+    "question": "What is the maximum rental increase allowed if the current rent is more than 40% below the RERA index?",
+    "ground_truth": "20% increase",
+    "source_doc": "04_rera_regulations.txt"
   },
   {
-    "id": "Q013",
-    "question": "What are the highest rental yield areas in Dubai?",
-    "ground_truth": "JVC (7.5-9.5%), Dubai Silicon Oasis (7-8.5%), International City (8-10%), JLT (6-8%) for apartments",
-    "category": "Investment"
+    "question": "What is the minimum property value required for a 10-year Golden Visa?",
+    "ground_truth": "AED 2,000,000",
+    "source_doc": "05_golden_visa_property.txt"
   },
   {
-    "id": "Q014",
-    "question": "What is the debt burden ratio for UAE mortgages?",
-    "ground_truth": "Maximum 50% of gross monthly income including all existing debt obligations",
-    "category": "Mortgage"
+    "question": "What types of properties are eligible for the Golden Visa?",
+    "ground_truth": "Residential (apartment, villa, townhouse) and Commercial (offices, retail \u2014 if investor category)",
+    "source_doc": "05_golden_visa_property.txt"
   },
   {
-    "id": "Q015",
-    "question": "How long does the property buying process take in Dubai?",
-    "ground_truth": "4-8 weeks for cash purchase, 6-12 weeks for mortgage purchase, from MOU signing to title deed",
-    "category": "Buying Process"
+    "question": "How long does the Golden Visa application processing typically take?",
+    "ground_truth": "2-4 weeks after document submission",
+    "source_doc": "05_golden_visa_property.txt"
+  },
+  {
+    "question": "What is the typical duration of property viewings in Dubai?",
+    "ground_truth": "30-60 minute appointments",
+    "source_doc": "06_property_buying_process.txt"
+  },
+  {
+    "question": "What are the costs associated with obtaining a power of attorney in Dubai?",
+    "ground_truth": "AED 2,000-4,000",
+    "source_doc": "06_property_buying_process.txt"
+  },
+  {
+    "question": "What is the approximate total cost of transaction costs for a buyer in Dubai?",
+    "ground_truth": "7-8% of purchase price",
+    "source_doc": "06_property_buying_process.txt"
+  },
+  {
+    "question": "What is the formula for calculating the gross rental yield in Dubai?",
+    "ground_truth": "Gross rental yield = Annual rent / Property purchase price x 100",
+    "source_doc": "07_rental_investment_guide.txt"
+  },
+  {
+    "question": "What are the approximate service charges for apartments in Downtown Dubai?",
+    "ground_truth": "AED 18-25/sqft",
+    "source_doc": "07_rental_investment_guide.txt"
+  },
+  {
+    "question": "What is the projected average capital appreciation for Dubai property in 2024?",
+    "ground_truth": "+8-12%",
+    "source_doc": "07_rental_investment_guide.txt"
+  },
+  {
+    "question": "What is the typical range of lower entry price for off-plan properties compared to completed market value?",
+    "ground_truth": "15-30% below completed market value",
+    "source_doc": "08_off_plan_guide.txt"
+  },
+  {
+    "question": "What are the typical payment structures for Construction Plan, Post-Handover Plan, and Launch Plan?",
+    "ground_truth": "70:30, 60:40, 10:90",
+    "source_doc": "08_off_plan_guide.txt"
+  },
+  {
+    "question": "What are the required documents to purchase off-plan property?",
+    "ground_truth": "Valid passport, Completed application form, Initial booking fee, Signed SPA",
+    "source_doc": "08_off_plan_guide.txt"
+  },
+  {
+    "question": "What is the typical service charge rate per square foot for apartments in Downtown Dubai in 2024?",
+    "ground_truth": "AED 18-25",
+    "source_doc": "09_service_charges_community_living.txt"
+  },
+  {
+    "question": "What is covered under the Reserve Fund in service charges?",
+    "ground_truth": "Major structural repairs, equipment replacement, roof and fa\u00e7ade refurbishment, common area renovation",
+    "source_doc": "09_service_charges_community_living.txt"
+  },
+  {
+    "question": "How often are annual general meetings required for Owners Associations in jointly owned developments?",
+    "ground_truth": "Annually",
+    "source_doc": "09_service_charges_community_living.txt"
+  },
+  {
+    "question": "What was the total value of transactions in Dubai's real estate market in 2023?",
+    "ground_truth": "AED 400+ billion",
+    "source_doc": "10_market_trends_2024_2025.txt"
+  },
+  {
+    "question": "What is the expected price appreciation for established areas in Dubai's real estate market in 2025?",
+    "ground_truth": "8-12%",
+    "source_doc": "10_market_trends_2024_2025.txt"
+  },
+  {
+    "question": "What is the current target for the population of Dubai residents by 2040?",
+    "ground_truth": "6M",
+    "source_doc": "10_market_trends_2024_2025.txt"
+  },
+  {
+    "question": "What is the approximate driving time from Sharjah to Dubai?",
+    "ground_truth": "15-25 min",
+    "source_doc": "21_sharjah_rak_uae_markets.txt"
+  },
+  {
+    "question": "What is the expected yield for a holiday home on Al Marjan Island after the Wynn Resort opens?",
+    "ground_truth": "12-18%",
+    "source_doc": "21_sharjah_rak_uae_markets.txt"
+  },
+  {
+    "question": "What is the transfer fee for property purchases in Ras Al Khaimah?",
+    "ground_truth": "2%",
+    "source_doc": "21_sharjah_rak_uae_markets.txt"
+  },
+  {
+    "question": "What are the requirements for opening a UAE bank account as an expat?",
+    "ground_truth": "Valid passport, UAE residence visa, Emirates ID, proof of address, salary certificate or employment letter, and 3-6 months bank statements from home country",
+    "source_doc": "22_uae_banking_mortgage_guide.txt"
+  },
+  {
+    "question": "What is the minimum salary required for mortgage eligibility for salaried employees in most banks?",
+    "ground_truth": "AED 10,000/month",
+    "source_doc": "22_uae_banking_mortgage_guide.txt"
+  },
+  {
+    "question": "What is the formula for calculating the monthly mortgage payment?",
+    "ground_truth": "Monthly = [P \u00d7 r(1+r)^n] / [(1+r)^n - 1]",
+    "source_doc": "22_uae_banking_mortgage_guide.txt"
+  },
+  {
+    "question": "What is the typical cost of hiring a professional snagging company for an apartment in the UAE?",
+    "ground_truth": "AED 1,500 \u2013 3,500",
+    "source_doc": "23_property_snagging_handover.txt"
+  },
+  {
+    "question": "What is the recommended time frame to conduct proper snagging after receiving a handover notice from the developer?",
+    "ground_truth": "2-4 weeks",
+    "source_doc": "23_property_snagging_handover.txt"
+  },
+  {
+    "question": "What is the deposit required for DEWA connection for an apartment?",
+    "ground_truth": "AED 1,100",
+    "source_doc": "23_property_snagging_handover.txt"
+  },
+  {
+    "question": "What is the premium commanded by properties near top-rated KHDA schools?",
+    "ground_truth": "10-20%",
+    "source_doc": "24_school_zones_dubai.txt"
+  },
+  {
+    "question": "What is the fee range for the Dubai British School in Emirates Hills?",
+    "ground_truth": "AED 45,000-65,000/year",
+    "source_doc": "24_school_zones_dubai.txt"
+  },
+  {
+    "question": "Which universities are located near Dubai Knowledge Park / Dubai International Academic City?",
+    "ground_truth": "Heriot-Watt, Middlesex, American University of Dubai",
+    "source_doc": "24_school_zones_dubai.txt"
+  },
+  {
+    "question": "What is the management fee structure for standard long-term rental management?",
+    "ground_truth": "5% of annual rent",
+    "source_doc": "25_property_management_guide.txt"
+  },
+  {
+    "question": "What services are added in the Premium/Full Service property management package?",
+    "ground_truth": "Regular property inspections, DEWA management, Service charge payments, Snagging and defect management, Lease renewal negotiations",
+    "source_doc": "25_property_management_guide.txt"
+  },
+  {
+    "question": "What is the right to notice before eviction for personal use, as per landlord rights in Dubai?",
+    "ground_truth": "12 months notice",
+    "source_doc": "25_property_management_guide.txt"
+  },
+  {
+    "question": "What is the duration of an Investor Visa or Golden Visa in the UAE?",
+    "ground_truth": "10 years (renewable)",
+    "source_doc": "26_uae_residency_visa_types.txt"
+  },
+  {
+    "question": "What is the minimum income requirement for a Freelancer Visa in some free zones?",
+    "ground_truth": "AED 360,000/year",
+    "source_doc": "26_uae_residency_visa_types.txt"
+  },
+  {
+    "question": "What are the requirements for a Retirement Visa in the UAE?",
+    "ground_truth": "Age 55+ and meet one of the options: AED 2M property investment, AED 1M in savings, or AED 20,000/month income",
+    "source_doc": "26_uae_residency_visa_types.txt"
+  },
+  {
+    "question": "What was the percentage decrease in Dubai property prices from peak during the 2008-2009 global financial crisis?",
+    "ground_truth": "50-60%",
+    "source_doc": "27_dubai_price_history_trends.txt"
+  },
+  {
+    "question": "What was the year-on-year percentage increase in Palm Jumeirah villas prices in 2022?",
+    "ground_truth": "+40-50%",
+    "source_doc": "27_dubai_price_history_trends.txt"
+  },
+  {
+    "question": "What is the expected percentage price growth in Dubai's real estate market for 2024?",
+    "ground_truth": "+8-12%",
+    "source_doc": "27_dubai_price_history_trends.txt"
+  },
+  {
+    "question": "What law governs jointly owned properties in Dubai?",
+    "ground_truth": "Dubai Law No. 27 of 2007",
+    "source_doc": "28_strata_law_owners_association.txt"
+  },
+  {
+    "question": "What is the minimum percentage of owners required for a quorum at an Annual General Meeting?",
+    "ground_truth": "25%",
+    "source_doc": "28_strata_law_owners_association.txt"
+  },
+  {
+    "question": "What happens to owners who do not pay their service charges?",
+    "ground_truth": "Interest penalty, cannot sell property until charges cleared, OA can take legal action, and name may be reported to credit bureaus",
+    "source_doc": "28_strata_law_owners_association.txt"
+  },
+  {
+    "question": "What is a typical cash discount for a cash buyer in the UAE property market?",
+    "ground_truth": "5-10% below asking price",
+    "source_doc": "29_negotiation_tactics_uae.txt"
+  },
+  {
+    "question": "How can you check if a seller is motivated according to the given document?",
+    "ground_truth": "Check listing date, price reduction history, ask the agent about previous offers, check DLD transactions, and ask about flexibility on timing",
+    "source_doc": "29_negotiation_tactics_uae.txt"
+  },
+  {
+    "question": "What is the recommended first offer strategy when negotiating a property price?",
+    "ground_truth": "Start 10-15% below asking price",
+    "source_doc": "29_negotiation_tactics_uae.txt"
+  },
+  {
+    "question": "What is the price range per square foot for properties in Downtown Dubai?",
+    "ground_truth": "AED 1,800-3,000",
+    "source_doc": "30_complete_area_comparison.txt"
+  },
+  {
+    "question": "What are the commute times from Dubai Hills Estate to Downtown Dubai and Dubai Marina?",
+    "ground_truth": "15 min to Downtown, 20 min to Marina",
+    "source_doc": "30_complete_area_comparison.txt"
+  },
+  {
+    "question": "What is the yield range for investment properties in Jumeirah Lake Towers?",
+    "ground_truth": "6.5-8.5%",
+    "source_doc": "30_complete_area_comparison.txt"
+  },
+  {
+    "question": "What is the total area of the villa, including the garden?",
+    "ground_truth": "3,400 sqft (BUA) + 1,200 sqft garden",
+    "source_doc": "P001_Dubai_Hills_Villa.txt"
+  },
+  {
+    "question": "What are the estimated annual service charges for the villa?",
+    "ground_truth": "AED 27,200/year",
+    "source_doc": "P001_Dubai_Hills_Villa.txt"
+  },
+  {
+    "question": "How long does it take to get to Dubai International Airport from the villa's location?",
+    "ground_truth": "20 min",
+    "source_doc": "P001_Dubai_Hills_Villa.txt"
+  },
+  {
+    "question": "What is the total area of the apartment?",
+    "ground_truth": "1,250 sqft",
+    "source_doc": "P002_Dubai_Marina_Apartment.txt"
+  },
+  {
+    "question": "What are the estimated rental incomes for the apartment?",
+    "ground_truth": "AED 90,000-110,000/year (unfurnished), AED 115,000-135,000/year (furnished)",
+    "source_doc": "P002_Dubai_Marina_Apartment.txt"
+  },
+  {
+    "question": "How far is Downtown Dubai from the apartment location?",
+    "ground_truth": "20 min",
+    "source_doc": "P002_Dubai_Marina_Apartment.txt"
+  },
+  {
+    "question": "What is the total area of the villa in square feet?",
+    "ground_truth": "7,200 sqft",
+    "source_doc": "P007_Palm_Jumeirah_Villa.txt"
+  },
+  {
+    "question": "What is the estimated annual rental income of the property?",
+    "ground_truth": "AED 600,000-750,000/year",
+    "source_doc": "P007_Palm_Jumeirah_Villa.txt"
+  },
+  {
+    "question": "How long does it take to drive to Downtown Dubai from the villa's location?",
+    "ground_truth": "25 min",
+    "source_doc": "P007_Palm_Jumeirah_Villa.txt"
   }
 ]

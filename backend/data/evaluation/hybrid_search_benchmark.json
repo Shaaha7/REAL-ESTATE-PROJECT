@@ -1,0 +1,1114 @@
+{
+  "n_queries": 69,
+  "top_k": 3,
+  "dense_only_top3_accuracy": 0.7391304347826086,
+  "hybrid_top3_accuracy": 0.9130434782608695,
+  "absolute_improvement_pct_points": 17.391304347826086,
+  "relative_improvement_pct": 23.52941176470588,
+  "per_query": [
+    {
+      "question": "What is the typical split of the property transfer fee between the buyer and seller?",
+      "expected_source": "01_dld_fees_and_transactions.txt",
+      "dense_top3_sources": [
+        "01_dld_fees_and_transactions.txt",
+        "29_negotiation_tactics_uae.txt",
+        "19_negotiation_process_uae.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "01_dld_fees_and_transactions.txt",
+        "29_negotiation_tactics_uae.txt",
+        "18_uae_taxes_costs_complete.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the minimum mortgage registration fee?",
+      "expected_source": "01_dld_fees_and_transactions.txt",
+      "dense_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "01_dld_fees_and_transactions.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "01_dld_fees_and_transactions.txt",
+        "22_uae_banking_mortgage_guide.txt",
+        "06_property_buying_process.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the time limit for completing title deed registration after signing the MOU?",
+      "expected_source": "01_dld_fees_and_transactions.txt",
+      "dense_top3_sources": [
+        "19_negotiation_process_uae.txt",
+        "06_property_buying_process.txt",
+        "08_off_plan_guide.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "01_dld_fees_and_transactions.txt",
+        "06_property_buying_process.txt",
+        "19_negotiation_process_uae.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the maximum LTV for a first property above AED 5M for UAE Nationals?",
+      "expected_source": "02_mortgage_regulations_uae.txt",
+      "dense_top3_sources": [
+        "02_mortgage_regulations_uae.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "02_mortgage_regulations_uae.txt",
+        "14_luxury_properties_uae_20m_plus.txt",
+        "P010_JVC_1BR_Investment.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the maximum Debt Burden Ratio mandated by the UAE Central Bank?",
+      "expected_source": "02_mortgage_regulations_uae.txt",
+      "dense_top3_sources": [
+        "02_mortgage_regulations_uae.txt",
+        "15_abu_dhabi_real_estate.txt",
+        "22_uae_banking_mortgage_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "02_mortgage_regulations_uae.txt",
+        "22_uae_banking_mortgage_guide.txt",
+        "15_abu_dhabi_real_estate.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "How long is a mortgage pre-approval typically valid for?",
+      "expected_source": "02_mortgage_regulations_uae.txt",
+      "dense_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "08_off_plan_guide.txt",
+        "02_mortgage_regulations_uae.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "06_property_buying_process.txt",
+        "06_property_buying_process.txt",
+        "01_dld_fees_and_transactions.txt"
+      ],
+      "hybrid_hit": false
+    },
+    {
+      "question": "What type of ownership gives the buyer full ownership rights over the property and the land it sits on, indefinitely?",
+      "expected_source": "03_freehold_areas_dubai.txt",
+      "dense_top3_sources": [
+        "02_mortgage_regulations_uae.txt",
+        "08_off_plan_guide.txt",
+        "16_uae_legal_ownership_structures.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "03_freehold_areas_dubai.txt",
+        "16_uae_legal_ownership_structures.txt",
+        "06_property_buying_process.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "In which areas can foreign nationals own property in Dubai?",
+      "expected_source": "03_freehold_areas_dubai.txt",
+      "dense_top3_sources": [
+        "16_uae_legal_ownership_structures.txt",
+        "03_freehold_areas_dubai.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "03_freehold_areas_dubai.txt",
+        "16_uae_legal_ownership_structures.txt",
+        "15_abu_dhabi_real_estate.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the approximate gross yield for properties in Dubai Marina in 2024?",
+      "expected_source": "03_freehold_areas_dubai.txt",
+      "dense_top3_sources": [
+        "03_freehold_areas_dubai.txt",
+        "07_rental_investment_guide.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "13_uae_investment_strategies.txt",
+        "P010_JVC_1BR_Investment.txt"
+      ],
+      "hybrid_hit": false
+    },
+    {
+      "question": "What year was RERA established?",
+      "expected_source": "04_rera_regulations.txt",
+      "dense_top3_sources": [
+        "04_rera_regulations.txt",
+        "09_service_charges_community_living.txt",
+        "04_rera_regulations.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "04_rera_regulations.txt",
+        "28_strata_law_owners_association.txt",
+        "09_service_charges_community_living.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the registration fee for Ejari?",
+      "expected_source": "04_rera_regulations.txt",
+      "dense_top3_sources": [
+        "06_property_buying_process.txt",
+        "04_rera_regulations.txt",
+        "08_off_plan_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "04_rera_regulations.txt",
+        "25_property_management_guide.txt",
+        "01_dld_fees_and_transactions.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the maximum rental increase allowed if the current rent is more than 40% below the RERA index?",
+      "expected_source": "04_rera_regulations.txt",
+      "dense_top3_sources": [
+        "04_rera_regulations.txt",
+        "07_rental_investment_guide.txt",
+        "P010_JVC_1BR_Investment.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "04_rera_regulations.txt",
+        "04_rera_regulations.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the minimum property value required for a 10-year Golden Visa?",
+      "expected_source": "05_golden_visa_property.txt",
+      "dense_top3_sources": [
+        "05_golden_visa_property.txt",
+        "20_propai_faq_common_questions.txt",
+        "16_uae_legal_ownership_structures.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "05_golden_visa_property.txt",
+        "26_uae_residency_visa_types.txt",
+        "P010_JVC_1BR_Investment.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What types of properties are eligible for the Golden Visa?",
+      "expected_source": "05_golden_visa_property.txt",
+      "dense_top3_sources": [
+        "05_golden_visa_property.txt",
+        "20_propai_faq_common_questions.txt",
+        "26_uae_residency_visa_types.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "05_golden_visa_property.txt",
+        "20_propai_faq_common_questions.txt",
+        "26_uae_residency_visa_types.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "How long does the Golden Visa application processing typically take?",
+      "expected_source": "05_golden_visa_property.txt",
+      "dense_top3_sources": [
+        "05_golden_visa_property.txt",
+        "26_uae_residency_visa_types.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "05_golden_visa_property.txt",
+        "P010_JVC_1BR_Investment.txt",
+        "26_uae_residency_visa_types.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the typical duration of property viewings in Dubai?",
+      "expected_source": "06_property_buying_process.txt",
+      "dense_top3_sources": [
+        "P010_JVC_1BR_Investment.txt",
+        "07_rental_investment_guide.txt",
+        "25_property_management_guide.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "06_property_buying_process.txt",
+        "08_off_plan_guide.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the costs associated with obtaining a power of attorney in Dubai?",
+      "expected_source": "06_property_buying_process.txt",
+      "dense_top3_sources": [
+        "06_property_buying_process.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "01_dld_fees_and_transactions.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "06_property_buying_process.txt",
+        "06_property_buying_process.txt",
+        "25_property_management_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the approximate total cost of transaction costs for a buyer in Dubai?",
+      "expected_source": "06_property_buying_process.txt",
+      "dense_top3_sources": [
+        "06_property_buying_process.txt",
+        "01_dld_fees_and_transactions.txt",
+        "18_uae_taxes_costs_complete.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "06_property_buying_process.txt",
+        "06_property_buying_process.txt",
+        "19_negotiation_process_uae.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the formula for calculating the gross rental yield in Dubai?",
+      "expected_source": "07_rental_investment_guide.txt",
+      "dense_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "03_freehold_areas_dubai.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "13_uae_investment_strategies.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the approximate service charges for apartments in Downtown Dubai?",
+      "expected_source": "07_rental_investment_guide.txt",
+      "dense_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "07_rental_investment_guide.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "07_rental_investment_guide.txt",
+        "P005_Downtown_Premium_Studio.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the projected average capital appreciation for Dubai property in 2024?",
+      "expected_source": "07_rental_investment_guide.txt",
+      "dense_top3_sources": [
+        "27_dubai_price_history_trends.txt",
+        "27_dubai_price_history_trends.txt",
+        "10_market_trends_2024_2025.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "07_rental_investment_guide.txt",
+        "10_market_trends_2024_2025.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the typical range of lower entry price for off-plan properties compared to completed market value?",
+      "expected_source": "08_off_plan_guide.txt",
+      "dense_top3_sources": [
+        "08_off_plan_guide.txt",
+        "29_negotiation_tactics_uae.txt",
+        "10_market_trends_2024_2025.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "08_off_plan_guide.txt",
+        "29_negotiation_tactics_uae.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the typical payment structures for Construction Plan, Post-Handover Plan, and Launch Plan?",
+      "expected_source": "08_off_plan_guide.txt",
+      "dense_top3_sources": [
+        "08_off_plan_guide.txt",
+        "08_off_plan_guide.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "08_off_plan_guide.txt",
+        "29_negotiation_tactics_uae.txt",
+        "08_off_plan_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the required documents to purchase off-plan property?",
+      "expected_source": "08_off_plan_guide.txt",
+      "dense_top3_sources": [
+        "08_off_plan_guide.txt",
+        "08_off_plan_guide.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "08_off_plan_guide.txt",
+        "08_off_plan_guide.txt",
+        "06_property_buying_process.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the typical service charge rate per square foot for apartments in Downtown Dubai in 2024?",
+      "expected_source": "09_service_charges_community_living.txt",
+      "dense_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "07_rental_investment_guide.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "07_rental_investment_guide.txt",
+        "P005_Downtown_Premium_Studio.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is covered under the Reserve Fund in service charges?",
+      "expected_source": "09_service_charges_community_living.txt",
+      "dense_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "20_propai_faq_common_questions.txt",
+        "28_strata_law_owners_association.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "28_strata_law_owners_association.txt",
+        "04_rera_regulations.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "How often are annual general meetings required for Owners Associations in jointly owned developments?",
+      "expected_source": "09_service_charges_community_living.txt",
+      "dense_top3_sources": [
+        "28_strata_law_owners_association.txt",
+        "09_service_charges_community_living.txt",
+        "28_strata_law_owners_association.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "28_strata_law_owners_association.txt",
+        "04_rera_regulations.txt",
+        "09_service_charges_community_living.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What was the total value of transactions in Dubai's real estate market in 2023?",
+      "expected_source": "10_market_trends_2024_2025.txt",
+      "dense_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "27_dubai_price_history_trends.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "27_dubai_price_history_trends.txt",
+        "21_sharjah_rak_uae_markets.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the expected price appreciation for established areas in Dubai's real estate market in 2025?",
+      "expected_source": "10_market_trends_2024_2025.txt",
+      "dense_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "10_market_trends_2024_2025.txt",
+        "27_dubai_price_history_trends.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "10_market_trends_2024_2025.txt",
+        "21_sharjah_rak_uae_markets.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the current target for the population of Dubai residents by 2040?",
+      "expected_source": "10_market_trends_2024_2025.txt",
+      "dense_top3_sources": [
+        "27_dubai_price_history_trends.txt",
+        "27_dubai_price_history_trends.txt",
+        "10_market_trends_2024_2025.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "27_dubai_price_history_trends.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the approximate driving time from Sharjah to Dubai?",
+      "expected_source": "21_sharjah_rak_uae_markets.txt",
+      "dense_top3_sources": [
+        "21_sharjah_rak_uae_markets.txt",
+        "30_complete_area_comparison.txt",
+        "24_school_zones_dubai.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "21_sharjah_rak_uae_markets.txt",
+        "30_complete_area_comparison.txt",
+        "03_freehold_areas_dubai.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the expected yield for a holiday home on Al Marjan Island after the Wynn Resort opens?",
+      "expected_source": "21_sharjah_rak_uae_markets.txt",
+      "dense_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "03_freehold_areas_dubai.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "21_sharjah_rak_uae_markets.txt",
+        "P009_Dubai_Marina_Penthouse.txt",
+        "21_sharjah_rak_uae_markets.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the transfer fee for property purchases in Ras Al Khaimah?",
+      "expected_source": "21_sharjah_rak_uae_markets.txt",
+      "dense_top3_sources": [
+        "01_dld_fees_and_transactions.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "21_sharjah_rak_uae_markets.txt",
+        "01_dld_fees_and_transactions.txt",
+        "15_abu_dhabi_real_estate.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the requirements for opening a UAE bank account as an expat?",
+      "expected_source": "22_uae_banking_mortgage_guide.txt",
+      "dense_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "26_uae_residency_visa_types.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "02_mortgage_regulations_uae.txt",
+        "16_uae_legal_ownership_structures.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the minimum salary required for mortgage eligibility for salaried employees in most banks?",
+      "expected_source": "22_uae_banking_mortgage_guide.txt",
+      "dense_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "02_mortgage_regulations_uae.txt",
+        "22_uae_banking_mortgage_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "02_mortgage_regulations_uae.txt",
+        "22_uae_banking_mortgage_guide.txt",
+        "05_golden_visa_property.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the formula for calculating the monthly mortgage payment?",
+      "expected_source": "22_uae_banking_mortgage_guide.txt",
+      "dense_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "02_mortgage_regulations_uae.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "22_uae_banking_mortgage_guide.txt",
+        "02_mortgage_regulations_uae.txt",
+        "22_uae_banking_mortgage_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the typical cost of hiring a professional snagging company for an apartment in the UAE?",
+      "expected_source": "23_property_snagging_handover.txt",
+      "dense_top3_sources": [
+        "23_property_snagging_handover.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "21_sharjah_rak_uae_markets.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "23_property_snagging_handover.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "06_property_buying_process.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the recommended time frame to conduct proper snagging after receiving a handover notice from the developer?",
+      "expected_source": "23_property_snagging_handover.txt",
+      "dense_top3_sources": [
+        "23_property_snagging_handover.txt",
+        "08_off_plan_guide.txt",
+        "09_service_charges_community_living.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "23_property_snagging_handover.txt",
+        "29_negotiation_tactics_uae.txt",
+        "08_off_plan_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the deposit required for DEWA connection for an apartment?",
+      "expected_source": "23_property_snagging_handover.txt",
+      "dense_top3_sources": [
+        "08_off_plan_guide.txt",
+        "04_rera_regulations.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "23_property_snagging_handover.txt",
+        "06_property_buying_process.txt",
+        "18_uae_taxes_costs_complete.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the premium commanded by properties near top-rated KHDA schools?",
+      "expected_source": "24_school_zones_dubai.txt",
+      "dense_top3_sources": [
+        "24_school_zones_dubai.txt",
+        "P004_Arabian_Ranches_4BR.txt",
+        "P008_Mirdif_2BR_Townhouse.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "24_school_zones_dubai.txt",
+        "24_school_zones_dubai.txt",
+        "P008_Mirdif_2BR_Townhouse.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the fee range for the Dubai British School in Emirates Hills?",
+      "expected_source": "24_school_zones_dubai.txt",
+      "dense_top3_sources": [
+        "24_school_zones_dubai.txt",
+        "24_school_zones_dubai.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "24_school_zones_dubai.txt",
+        "24_school_zones_dubai.txt",
+        "09_service_charges_community_living.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "Which universities are located near Dubai Knowledge Park / Dubai International Academic City?",
+      "expected_source": "24_school_zones_dubai.txt",
+      "dense_top3_sources": [
+        "24_school_zones_dubai.txt",
+        "24_school_zones_dubai.txt",
+        "12_dubai_areas_complete_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "24_school_zones_dubai.txt",
+        "24_school_zones_dubai.txt",
+        "30_complete_area_comparison.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the management fee structure for standard long-term rental management?",
+      "expected_source": "25_property_management_guide.txt",
+      "dense_top3_sources": [
+        "25_property_management_guide.txt",
+        "13_uae_investment_strategies.txt",
+        "09_service_charges_community_living.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "25_property_management_guide.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What services are added in the Premium/Full Service property management package?",
+      "expected_source": "25_property_management_guide.txt",
+      "dense_top3_sources": [
+        "25_property_management_guide.txt",
+        "09_service_charges_community_living.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "25_property_management_guide.txt",
+        "09_service_charges_community_living.txt",
+        "14_luxury_properties_uae_20m_plus.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the right to notice before eviction for personal use, as per landlord rights in Dubai?",
+      "expected_source": "25_property_management_guide.txt",
+      "dense_top3_sources": [
+        "25_property_management_guide.txt",
+        "25_property_management_guide.txt",
+        "04_rera_regulations.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "25_property_management_guide.txt",
+        "04_rera_regulations.txt",
+        "03_freehold_areas_dubai.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the duration of an Investor Visa or Golden Visa in the UAE?",
+      "expected_source": "26_uae_residency_visa_types.txt",
+      "dense_top3_sources": [
+        "05_golden_visa_property.txt",
+        "26_uae_residency_visa_types.txt",
+        "26_uae_residency_visa_types.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "26_uae_residency_visa_types.txt",
+        "05_golden_visa_property.txt",
+        "P010_JVC_1BR_Investment.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the minimum income requirement for a Freelancer Visa in some free zones?",
+      "expected_source": "26_uae_residency_visa_types.txt",
+      "dense_top3_sources": [
+        "26_uae_residency_visa_types.txt",
+        "22_uae_banking_mortgage_guide.txt",
+        "21_sharjah_rak_uae_markets.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "26_uae_residency_visa_types.txt",
+        "16_uae_legal_ownership_structures.txt",
+        "05_golden_visa_property.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the requirements for a Retirement Visa in the UAE?",
+      "expected_source": "26_uae_residency_visa_types.txt",
+      "dense_top3_sources": [
+        "26_uae_residency_visa_types.txt",
+        "05_golden_visa_property.txt",
+        "26_uae_residency_visa_types.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "26_uae_residency_visa_types.txt",
+        "05_golden_visa_property.txt",
+        "22_uae_banking_mortgage_guide.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What was the percentage decrease in Dubai property prices from peak during the 2008-2009 global financial crisis?",
+      "expected_source": "27_dubai_price_history_trends.txt",
+      "dense_top3_sources": [
+        "27_dubai_price_history_trends.txt",
+        "10_market_trends_2024_2025.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "27_dubai_price_history_trends.txt",
+        "10_market_trends_2024_2025.txt",
+        "10_market_trends_2024_2025.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What was the year-on-year percentage increase in Palm Jumeirah villas prices in 2022?",
+      "expected_source": "27_dubai_price_history_trends.txt",
+      "dense_top3_sources": [
+        "11_uae_property_price_guide_aed.txt",
+        "30_complete_area_comparison.txt",
+        "P007_Palm_Jumeirah_Villa.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "27_dubai_price_history_trends.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "30_complete_area_comparison.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the expected percentage price growth in Dubai's real estate market for 2024?",
+      "expected_source": "27_dubai_price_history_trends.txt",
+      "dense_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "10_market_trends_2024_2025.txt",
+        "27_dubai_price_history_trends.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "10_market_trends_2024_2025.txt",
+        "10_market_trends_2024_2025.txt",
+        "27_dubai_price_history_trends.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What law governs jointly owned properties in Dubai?",
+      "expected_source": "28_strata_law_owners_association.txt",
+      "dense_top3_sources": [
+        "16_uae_legal_ownership_structures.txt",
+        "16_uae_legal_ownership_structures.txt",
+        "18_uae_taxes_costs_complete.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "28_strata_law_owners_association.txt",
+        "09_service_charges_community_living.txt",
+        "03_freehold_areas_dubai.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the minimum percentage of owners required for a quorum at an Annual General Meeting?",
+      "expected_source": "28_strata_law_owners_association.txt",
+      "dense_top3_sources": [
+        "28_strata_law_owners_association.txt",
+        "09_service_charges_community_living.txt",
+        "04_rera_regulations.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "28_strata_law_owners_association.txt",
+        "04_rera_regulations.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What happens to owners who do not pay their service charges?",
+      "expected_source": "28_strata_law_owners_association.txt",
+      "dense_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "08_off_plan_guide.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "18_uae_taxes_costs_complete.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "hybrid_hit": false
+    },
+    {
+      "question": "What is a typical cash discount for a cash buyer in the UAE property market?",
+      "expected_source": "29_negotiation_tactics_uae.txt",
+      "dense_top3_sources": [
+        "29_negotiation_tactics_uae.txt",
+        "19_negotiation_process_uae.txt",
+        "18_uae_taxes_costs_complete.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "29_negotiation_tactics_uae.txt",
+        "19_negotiation_process_uae.txt",
+        "06_property_buying_process.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "How can you check if a seller is motivated according to the given document?",
+      "expected_source": "29_negotiation_tactics_uae.txt",
+      "dense_top3_sources": [
+        "29_negotiation_tactics_uae.txt",
+        "06_property_buying_process.txt",
+        "14_luxury_properties_uae_20m_plus.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "29_negotiation_tactics_uae.txt",
+        "29_negotiation_tactics_uae.txt",
+        "19_negotiation_process_uae.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the recommended first offer strategy when negotiating a property price?",
+      "expected_source": "29_negotiation_tactics_uae.txt",
+      "dense_top3_sources": [
+        "29_negotiation_tactics_uae.txt",
+        "29_negotiation_tactics_uae.txt",
+        "06_property_buying_process.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "29_negotiation_tactics_uae.txt",
+        "29_negotiation_tactics_uae.txt",
+        "19_negotiation_process_uae.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the price range per square foot for properties in Downtown Dubai?",
+      "expected_source": "30_complete_area_comparison.txt",
+      "dense_top3_sources": [
+        "11_uae_property_price_guide_aed.txt",
+        "30_complete_area_comparison.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "11_uae_property_price_guide_aed.txt",
+        "20_propai_faq_common_questions.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "hybrid_hit": false
+    },
+    {
+      "question": "What are the commute times from Dubai Hills Estate to Downtown Dubai and Dubai Marina?",
+      "expected_source": "30_complete_area_comparison.txt",
+      "dense_top3_sources": [
+        "30_complete_area_comparison.txt",
+        "12_dubai_areas_complete_guide.txt",
+        "13_uae_investment_strategies.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "30_complete_area_comparison.txt",
+        "P001_Dubai_Hills_Villa.txt",
+        "24_school_zones_dubai.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the yield range for investment properties in Jumeirah Lake Towers?",
+      "expected_source": "30_complete_area_comparison.txt",
+      "dense_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "13_uae_investment_strategies.txt",
+        "03_freehold_areas_dubai.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "P003_JLT_1BR_Lake_View.txt",
+        "12_dubai_areas_complete_guide.txt"
+      ],
+      "hybrid_hit": false
+    },
+    {
+      "question": "What is the total area of the villa, including the garden?",
+      "expected_source": "P001_Dubai_Hills_Villa.txt",
+      "dense_top3_sources": [
+        "P007_Palm_Jumeirah_Villa.txt",
+        "11_uae_property_price_guide_aed.txt",
+        "P001_Dubai_Hills_Villa.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "P001_Dubai_Hills_Villa.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the estimated annual service charges for the villa?",
+      "expected_source": "P001_Dubai_Hills_Villa.txt",
+      "dense_top3_sources": [
+        "20_propai_faq_common_questions.txt",
+        "07_rental_investment_guide.txt",
+        "09_service_charges_community_living.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "09_service_charges_community_living.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "P001_Dubai_Hills_Villa.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "How long does it take to get to Dubai International Airport from the villa's location?",
+      "expected_source": "P001_Dubai_Hills_Villa.txt",
+      "dense_top3_sources": [
+        "30_complete_area_comparison.txt",
+        "12_dubai_areas_complete_guide.txt",
+        "14_luxury_properties_uae_20m_plus.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "P001_Dubai_Hills_Villa.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "20_propai_faq_common_questions.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the total area of the apartment?",
+      "expected_source": "P002_Dubai_Marina_Apartment.txt",
+      "dense_top3_sources": [
+        "P008_Mirdif_2BR_Townhouse.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "P009_Dubai_Marina_Penthouse.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "P002_Dubai_Marina_Apartment.txt",
+        "P009_Dubai_Marina_Penthouse.txt",
+        "P003_JLT_1BR_Lake_View.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What are the estimated rental incomes for the apartment?",
+      "expected_source": "P002_Dubai_Marina_Apartment.txt",
+      "dense_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "P009_Dubai_Marina_Penthouse.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "P002_Dubai_Marina_Apartment.txt",
+        "10_market_trends_2024_2025.txt",
+        "P009_Dubai_Marina_Penthouse.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "How far is Downtown Dubai from the apartment location?",
+      "expected_source": "P002_Dubai_Marina_Apartment.txt",
+      "dense_top3_sources": [
+        "30_complete_area_comparison.txt",
+        "P008_Mirdif_2BR_Townhouse.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "P002_Dubai_Marina_Apartment.txt",
+        "20_propai_faq_common_questions.txt",
+        "P005_Downtown_Premium_Studio.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the total area of the villa in square feet?",
+      "expected_source": "P007_Palm_Jumeirah_Villa.txt",
+      "dense_top3_sources": [
+        "P007_Palm_Jumeirah_Villa.txt",
+        "P008_Mirdif_2BR_Townhouse.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "dense_hit": true,
+      "hybrid_top3_sources": [
+        "P001_Dubai_Hills_Villa.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "11_uae_property_price_guide_aed.txt"
+      ],
+      "hybrid_hit": true
+    },
+    {
+      "question": "What is the estimated annual rental income of the property?",
+      "expected_source": "P007_Palm_Jumeirah_Villa.txt",
+      "dense_top3_sources": [
+        "07_rental_investment_guide.txt",
+        "P009_Dubai_Marina_Penthouse.txt",
+        "P010_JVC_1BR_Investment.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "P009_Dubai_Marina_Penthouse.txt",
+        "13_uae_investment_strategies.txt",
+        "07_rental_investment_guide.txt"
+      ],
+      "hybrid_hit": false
+    },
+    {
+      "question": "How long does it take to drive to Downtown Dubai from the villa's location?",
+      "expected_source": "P007_Palm_Jumeirah_Villa.txt",
+      "dense_top3_sources": [
+        "12_dubai_areas_complete_guide.txt",
+        "14_luxury_properties_uae_20m_plus.txt",
+        "30_complete_area_comparison.txt"
+      ],
+      "dense_hit": false,
+      "hybrid_top3_sources": [
+        "20_propai_faq_common_questions.txt",
+        "P007_Palm_Jumeirah_Villa.txt",
+        "30_complete_area_comparison.txt"
+      ],
+      "hybrid_hit": true
+    }
+  ]
+}
