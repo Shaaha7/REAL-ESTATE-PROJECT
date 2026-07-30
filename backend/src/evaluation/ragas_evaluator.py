@@ -9,6 +9,7 @@ from ragas import evaluate
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.llms import LangchainLLMWrapper
 from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
+from ragas.run_config import RunConfig
 
 from src.utils.settings import get_settings
 
@@ -75,12 +76,16 @@ class RAGASEvaluator:
         judge_embeddings = LangchainEmbeddingsWrapper(HuggingFaceEmbeddings(model_name=settings.embedding_model))
 
         logger.info(f"Running ragas.evaluate() on {len(questions)} queries (judge: {settings.llm_provider}/{settings.active_model})")
+        # Free-tier LLM APIs (Groq/Gemini) rate-limit hard; ragas defaults to 16
+        # concurrent workers, which reliably trips them. 2 workers with generous
+        # per-call timeout/wait trades speed for actually finishing.
         result = evaluate(
             dataset,
             metrics=[faithfulness, answer_relevancy, context_precision, context_recall],
             llm=judge_llm,
             embeddings=judge_embeddings,
             raise_exceptions=False,
+            run_config=RunConfig(max_workers=2, timeout=90, max_wait=90),
         )
         df = result.to_pandas()
 
