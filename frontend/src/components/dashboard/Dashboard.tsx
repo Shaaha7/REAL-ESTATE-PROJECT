@@ -74,7 +74,7 @@ export default function Dashboard(){
     </div>
   </div>
   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-    {[{label:'RAGAS Faithfulness',value:(stats?.ragas_faithfulness||0).toFixed(4),target:'0.97 ✓',color:'text-emerald-400'},{label:'Hallucination Rate',value:`${((stats?.hallucination_rate||0)*100).toFixed(1)}%`,target:'<2% ✓',color:'text-brand-400'},{label:'Avg Latency',value:`${stats?.avg_latency_ms}ms`,target:'<50ms ✓',color:'text-amber-400'},{label:'Daily Requests',value:stats?.daily_requests.toLocaleString()||'0',target:'1,000+ capacity',color:'text-purple-400'}].map(m=>(
+    {[{label:'RAGAS Faithfulness',value:stats?.ragas_evaluated?stats.ragas_faithfulness.toFixed(4):'—',target:stats?.ragas_evaluated?'0.97 ✓':'Not yet evaluated',color:stats?.ragas_evaluated?'text-emerald-400':'text-slate-500'},{label:'Hallucination Rate',value:stats?.ragas_evaluated?`${(stats.hallucination_rate*100).toFixed(1)}%`:'—',target:stats?.ragas_evaluated?'<2% ✓':'Not yet evaluated',color:stats?.ragas_evaluated?'text-brand-400':'text-slate-500'},{label:'Avg Latency',value:`${stats?.avg_latency_ms}ms`,target:'<50ms ✓',color:'text-amber-400'},{label:'Daily Requests',value:stats?.daily_requests.toLocaleString()||'0',target:'1,000+ capacity',color:'text-purple-400'}].map(m=>(
       <div key={m.label} className="card text-center">
         <div className={`text-2xl font-bold ${m.color} mb-1`}>{m.value}</div>
         <div className="text-xs text-slate-400 mb-1">{m.label}</div>
