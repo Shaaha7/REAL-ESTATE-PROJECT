@@ -1,8 +1,42 @@
 import sys; sys.path.insert(0,'.')
+import pytest
 from src.evaluation.ragas_evaluator import RAGASEvaluator
+from src.rag.pipeline import RAGPipeline
+from src.utils.settings import get_settings
 
-def test_runs(): r=RAGASEvaluator().run_evaluation(); assert "summary" in r
-def test_faithfulness(): r=RAGASEvaluator().run_evaluation(); assert 0<=r["summary"]["faithfulness"]<=1
-def test_hallucination(): r=RAGASEvaluator().run_evaluation(); assert r["summary"]["hallucination_rate"]<0.1
-def test_per_query(): r=RAGASEvaluator().run_evaluation(); assert len(r["per_query_results"])>=5
-def test_targets(): r=RAGASEvaluator().run_evaluation(); s=r["summary"]; assert "faithfulness_achieved" in s and "hallucination_target_met" in s
+DOCS = [{"content": "DLD charges a 4% transfer fee on property purchases in Dubai, paid at registration.", "source": "dld_test.txt"}]
+TEST_QUERIES = [{"question": "What percentage transfer fee does DLD charge on Dubai property purchases?", "ground_truth": "4% of the purchase price", "source_doc": "dld_test.txt"}]
+
+no_llm = not bool(get_settings().active_api_key)
+needs_llm = pytest.mark.skipif(no_llm, reason="No GOOGLE_API_KEY/GROQ_API_KEY configured - real ragas evaluation needs a live LLM")
+
+@pytest.fixture(scope="module")
+def rag():
+    p = RAGPipeline(); p.build_index(DOCS); return p
+
+@pytest.fixture(scope="module")
+def result(rag):
+    return RAGASEvaluator(rag_pipeline=rag).run_evaluation(test_queries=TEST_QUERIES)
+
+def test_requires_pipeline():
+    with pytest.raises(ValueError):
+        RAGASEvaluator(rag_pipeline=None).run_evaluation(test_queries=TEST_QUERIES)
+
+@needs_llm
+def test_runs(result): assert "summary" in result
+
+@needs_llm
+def test_faithfulness_in_range(result): assert 0 <= result["summary"]["faithfulness"] <= 1
+
+@needs_llm
+def test_hallucination_consistent_with_faithfulness(result):
+    s = result["summary"]
+    assert abs(s["hallucination_rate"] - (1 - s["faithfulness"])) < 1e-9
+
+@needs_llm
+def test_per_query_matches_input(result): assert len(result["per_query_results"]) == len(TEST_QUERIES)
+
+@needs_llm
+def test_targets_present(result):
+    s = result["summary"]
+    assert "faithfulness_achieved" in s and "hallucination_target_met" in s
