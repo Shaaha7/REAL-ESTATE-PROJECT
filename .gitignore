@@ -1,7 +1,8 @@
 __pycache__/
 *.pyc
 .env
-venv/ .venv/
+venv/
+.venv/
 backend/mlruns/
 backend/logs/*.log
 backend/data/documents/*.faiss
@@ -11,12 +12,3 @@ node_modules/
 frontend/dist/
 .DS_Store
 *.zip
-v e n v / 
- 
- _ _ p y c a c h e _ _ / 
- 
- * . p y c 
- 
- . e n v 
- 
- 
