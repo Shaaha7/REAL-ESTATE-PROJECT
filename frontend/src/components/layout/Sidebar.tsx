@@ -1,7 +1,3 @@
-/**
- * UPDATED Sidebar.tsx — adds links for all new pages
- * Replace your existing frontend/src/components/layout/Sidebar.tsx
- */
 import { NavLink } from 'react-router-dom'
 
 const nav = [
