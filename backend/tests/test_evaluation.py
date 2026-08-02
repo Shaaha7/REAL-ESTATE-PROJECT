@@ -16,8 +16,13 @@ no_llm = not bool(get_settings().active_api_key)
 needs_llm = pytest.mark.skipif(no_llm, reason="No GOOGLE_API_KEY/GROQ_API_KEY configured - real ragas evaluation needs a live LLM")
 
 @pytest.fixture(scope="module")
-def rag():
-    p = RAGPipeline(); p.build_index(DOCS); return p
+def rag(tmp_path_factory):
+    # must not use the default index path - that's the same file app.py loads
+    # on startup, and build_index() unconditionally overwrites it on disk
+    p = RAGPipeline()
+    p._index_path = tmp_path_factory.mktemp("rag_index") / "idx"
+    p.build_index(DOCS)
+    return p
 
 @pytest.fixture(scope="module")
 def result(rag):
