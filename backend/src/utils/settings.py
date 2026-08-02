@@ -30,6 +30,8 @@ class Settings(BaseSettings):
     chunk_overlap: int = 64
     top_k_final: int = 6
     min_score_threshold: float = 0.15
+    admin_api_key: str = ""
+    rate_limit_per_minute: int = 20
 
     @property
     def mysql_url(self) -> str:

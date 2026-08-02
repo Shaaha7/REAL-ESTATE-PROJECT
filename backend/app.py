@@ -3,13 +3,13 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent))
-import time, uuid
+import secrets, time, uuid
 from collections import deque
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from loguru import logger
@@ -28,6 +28,20 @@ _request_count = 0
 _error_count = 0
 _server_start_time = time.time()
 
+# Admin key protects the two endpoints that mutate the knowledge base
+# (POST /api/rag/index, /api/rag/rebuild). If ADMIN_API_KEY isn't set, generate
+# one at startup and log it - keeps the app usable with zero config (matching
+# every other "works without extra setup" default here) while still requiring
+# a real key instead of leaving these open to anyone.
+_ADMIN_API_KEY = settings.admin_api_key or secrets.token_urlsafe(24)
+if not settings.admin_api_key:
+    logger.warning(f"ADMIN_API_KEY not set - generated one for this run: {_ADMIN_API_KEY}")
+    logger.warning("Set ADMIN_API_KEY in .env to keep a stable key across restarts.")
+
+async def require_admin_key(x_api_key: str = Header(default="")):
+    if not secrets.compare_digest(x_api_key, _ADMIN_API_KEY):
+        raise HTTPException(401, "Missing or invalid X-API-Key header")
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global _lead,_property,_rag,_orch
@@ -44,7 +58,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="PropAI — Real Estate AI Platform", version="1.0.0", lifespan=lifespan, docs_url="/api/docs", redoc_url="/api/redoc", openapi_url="/api/openapi.json")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
-app.add_middleware(CORSMiddleware, allow_origins=[settings.frontend_url,"http://localhost:3000","http://localhost:5173","*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(CORSMiddleware, allow_origins=list({settings.frontend_url,"http://localhost:3000","http://localhost:5173"}), allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 @app.middleware("http")
 async def latency_header(request, call_next):
@@ -118,9 +132,11 @@ async def rag_query(req: RAGRequest):
     if not _rag: raise HTTPException(503,"RAG not ready")
     return _rag.query(req.question)
 
-@app.post("/api/rag/index", tags=["RAG"])
+@app.post("/api/rag/index", tags=["RAG"], dependencies=[Depends(require_admin_key)])
 async def build_index(req: IndexRequest):
     if not _rag: raise HTTPException(503,"RAG not ready")
+    if len(req.documents) > 200:
+        raise HTTPException(413, "Too many documents in one request (max 200)")
     _rag.build_index(req.documents); return {"status":"indexed","chunks_indexed":len(_rag._docs)}
 
 @app.get("/api/rag/documents", tags=["RAG"])
@@ -232,7 +248,7 @@ async def compare_props(req: CompareReq):
     return ComparisonAgent().compare(req.property_ids, req.buyer_profile)
 
 # ── NEW: Force rebuild RAG index ───────────────────────────────────────────────
-@app.post("/api/rag/rebuild", tags=["RAG"])
+@app.post("/api/rag/rebuild", tags=["RAG"], dependencies=[Depends(require_admin_key)])
 async def rebuild_rag():
     if not _rag: raise HTTPException(503, "RAG not ready")
     n = _rag.rebuild_from_all_docs()
