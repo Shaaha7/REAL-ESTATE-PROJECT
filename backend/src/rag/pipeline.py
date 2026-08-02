@@ -8,6 +8,7 @@ from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from src.utils.settings import get_settings
 from src.utils.llm_client import LLMClient
+from src.utils.redis_cache import RAGCache
 from src.prompts.templates import build_rag_prompt
 
 def _normalise_query(query: str) -> str:
@@ -33,6 +34,13 @@ class RAGPipeline:
         self._index: Optional[faiss.IndexFlatIP] = None
         self._docs: list[Document] = []; self._bm25: Optional[BM25Okapi] = None
         self._index_path = Path(self.settings.faiss_index_path)
+        self._cache: Optional[RAGCache] = None
+
+    @property
+    def cache(self) -> RAGCache:
+        if self._cache is None:
+            self._cache = RAGCache()
+        return self._cache
 
     @property
     def embedder(self):
@@ -104,6 +112,10 @@ class RAGPipeline:
         return [(doc,float(s)) for (doc,_),s in ranked[:top_k]]
 
     def query(self, question: str) -> dict:
+        cached = self.cache.get(question)
+        if cached is not None:
+            return {**cached, "cached": True}
+
         if self._index is None:
             if not self.load_index():
                 return {"answer":"Knowledge base not indexed. Index will be built on startup with real documents.","sources":[],"confidence":0.0,"answer_found_in_context":False}
@@ -128,6 +140,8 @@ class RAGPipeline:
             result["retrieved_chunks"]=[doc.doc_id for doc,_ in top_k]
             result["rerank_scores"]=[round(s,4) for _,s in top_k]
             result["contexts"]=[doc.content for doc,_ in top_k]
+            if "error" not in result:
+                self.cache.set(question, result)
         return result
 
     def load_documents_from_dir(self, dir_path: str) -> int:

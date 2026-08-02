@@ -1,9 +1,3 @@
-"""
-NEW UTIL: Redis Cache for RAG queries
-Drop into: backend/src/utils/redis_cache.py
-Caches frequent RAG answers so same question returns instantly.
-Falls back gracefully if Redis not available.
-"""
 from __future__ import annotations
 import json
 import hashlib
