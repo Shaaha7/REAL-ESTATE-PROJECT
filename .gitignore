@@ -5,6 +5,8 @@ venv/
 .venv/
 backend/mlruns/
 backend/logs/*.log
+backend/logs/*.jsonl
+backend/logs/*.zip
 backend/data/documents/*.faiss
 backend/data/documents/*.pkl
 backend/data/models/*.pkl

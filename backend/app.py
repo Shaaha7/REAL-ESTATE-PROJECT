@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
 import uvicorn
-from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from loguru import logger
@@ -22,6 +22,16 @@ from src.agents.orchestrator import OrchestratorAgent
 from src.evaluation.ragas_evaluator import RAGASEvaluator
 
 settings = get_settings()
+
+# Console sink (loguru's default) stays for local dev visibility. These two
+# add real file-based logging: a human-readable rotating log, and a JSON-lines
+# sink suitable for a real log pipeline (Loki/ELK/CloudWatch etc. all ingest
+# JSON-per-line naturally). Previously loguru only ever wrote to stdout - if
+# the process wasn't attached to a terminal, there was no record at all.
+Path("logs").mkdir(exist_ok=True)
+logger.add("logs/app.log", level=settings.log_level, rotation="10 MB", retention="7 days", compression="zip")
+logger.add("logs/app.jsonl", level=settings.log_level, rotation="10 MB", retention="7 days", serialize=True)
+
 _lead=_property=_rag=_orch=None
 _request_latencies_ms: deque = deque(maxlen=1000)  # real observed latencies, this process only
 _request_count = 0
@@ -41,6 +51,22 @@ if not settings.admin_api_key:
 async def require_admin_key(x_api_key: str = Header(default="")):
     if not secrets.compare_digest(x_api_key, _ADMIN_API_KEY):
         raise HTTPException(401, "Missing or invalid X-API-Key header")
+
+# Simple in-memory sliding-window limiter, per client IP, for the LLM-backed
+# endpoints (the ones that cost real money/quota per call). Single-process
+# only - fine for this app's scale, would need a shared store (e.g. the same
+# Redis RAGCache already falls back from) behind more than one worker.
+_rate_limit_hits: dict[str, deque] = {}
+
+async def rate_limit_dep(request: Request):
+    client_ip = request.client.host if request.client else "unknown"
+    now = time.time()
+    window = _rate_limit_hits.setdefault(client_ip, deque())
+    while window and now - window[0] > 60:
+        window.popleft()
+    if len(window) >= settings.rate_limit_per_minute:
+        raise HTTPException(429, f"Rate limit exceeded ({settings.rate_limit_per_minute}/min). Try again shortly.")
+    window.append(now)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -94,12 +120,12 @@ async def root(): return {"service":"PropAI Real Estate Platform","version":"1.0
 @app.get("/api/health", tags=["Health"])
 async def health(): return {"status":"healthy","agents":{"orchestrator":_orch is not None,"lead_scoring":_lead is not None,"property_retrieval":_property is not None,"rag_pipeline":_rag is not None},"rag_chunks":len(_rag._docs) if _rag else 0,"provider":settings.llm_provider,"model":settings.active_model,"api_key_configured":bool(settings.active_api_key)}
 
-@app.post("/api/agent/chat", tags=["Orchestrator"])
+@app.post("/api/agent/chat", tags=["Orchestrator"], dependencies=[Depends(rate_limit_dep)])
 async def agent_chat(req: AgentRequest):
     if not _orch: raise HTTPException(503,"Orchestrator not ready")
     return _orch.run(req.message, session_id=req.session_id)
 
-@app.post("/api/leads/score", tags=["Lead Scoring"])
+@app.post("/api/leads/score", tags=["Lead Scoring"], dependencies=[Depends(rate_limit_dep)])
 async def score_lead(req: LeadScoreRequest):
     if not _lead: raise HTTPException(503,"Lead agent not ready")
     return _lead.score(LeadData(**req.model_dump())).model_dump()
@@ -127,7 +153,7 @@ async def get_property(property_id: str):
     if not prop: raise HTTPException(404,f"Property {property_id} not found")
     return prop
 
-@app.post("/api/rag/query", tags=["RAG"])
+@app.post("/api/rag/query", tags=["RAG"], dependencies=[Depends(rate_limit_dep)])
 async def rag_query(req: RAGRequest):
     if not _rag: raise HTTPException(503,"RAG not ready")
     return _rag.query(req.question)
