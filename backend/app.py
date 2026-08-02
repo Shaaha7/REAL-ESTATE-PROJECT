@@ -4,6 +4,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent))
 import time, uuid
+from collections import deque
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
@@ -22,6 +23,10 @@ from src.evaluation.ragas_evaluator import RAGASEvaluator
 
 settings = get_settings()
 _lead=_property=_rag=_orch=None
+_request_latencies_ms: deque = deque(maxlen=1000)  # real observed latencies, this process only
+_request_count = 0
+_error_count = 0
+_server_start_time = time.time()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -43,8 +48,13 @@ app.add_middleware(CORSMiddleware, allow_origins=[settings.frontend_url,"http://
 
 @app.middleware("http")
 async def latency_header(request, call_next):
+    global _request_count, _error_count
     t0=time.perf_counter(); response=await call_next(request)
-    response.headers["X-Latency-MS"]=str(round((time.perf_counter()-t0)*1000,2))
+    ms = round((time.perf_counter()-t0)*1000,2)
+    response.headers["X-Latency-MS"]=str(ms)
+    if request.url.path.startswith("/api"):
+        _request_latencies_ms.append(ms); _request_count += 1
+        if response.status_code>=400: _error_count += 1
     return response
 
 class AgentRequest(BaseModel):
@@ -125,16 +135,40 @@ async def list_documents():
 async def ragas_eval(): return RAGASEvaluator(rag_pipeline=_rag).run_evaluation()
 
 @app.get("/api/metrics", tags=["Observability"])
-async def metrics(): return {"rag_chunks":len(_rag._docs) if _rag else 0,"lead_model_loaded":_lead is not None,"provider":settings.llm_provider,"model":settings.active_model,"api_key_configured":bool(settings.active_api_key)}
+async def metrics():
+    lat = list(_request_latencies_ms)
+    lat_sorted = sorted(lat)
+    def _pct(p: float) -> Optional[float]:
+        if not lat_sorted: return None
+        idx = min(len(lat_sorted)-1, int(len(lat_sorted)*p))
+        return lat_sorted[idx]
+    return {"rag_chunks":len(_rag._docs) if _rag else 0,"lead_model_loaded":_lead is not None,
+            "provider":settings.llm_provider,"model":settings.active_model,"api_key_configured":bool(settings.active_api_key),
+            "requests_total":_request_count,"errors_total":_error_count,
+            "error_rate_pct":round(_error_count/_request_count*100,2) if _request_count else 0.0,
+            "uptime_seconds":round(time.time()-_server_start_time,1),
+            "latency_ms":{"avg":round(sum(lat)/len(lat),1) if lat else None,"p50":_pct(0.50),"p95":_pct(0.95),"p99":_pct(0.99),"samples":len(lat)}}
 
 @app.get("/api/stats/dashboard", tags=["Dashboard"])
 async def dashboard_stats():
     import json
+    from datetime import date
     leads_path=Path("data/synthetic/leads_200.json")
     hot=warm=cold=0
+    lead_conversion_rate=avg_lead_score=revenue_pipeline_aed=deals_closed_this_month=0
     if leads_path.exists():
         with open(leads_path) as f: leads=json.load(f)
         hot=sum(1 for l in leads if l["tier"]=="HOT"); warm=sum(1 for l in leads if l["tier"]=="WARM"); cold=sum(1 for l in leads if l["tier"]=="COLD")
+        closed=[l for l in leads if l.get("status")=="closed"]
+        active=[l for l in leads if l.get("status") not in ("closed","lost")]
+        lead_conversion_rate=round(len(closed)/len(leads)*100,1) if leads else 0
+        avg_lead_score=round(sum(l.get("lead_score",0) for l in leads)/len(leads),1) if leads else 0
+        revenue_pipeline_aed=sum(l.get("budget_aed",0) for l in active)
+        # "this month" = the most recent calendar month present in the dataset's own
+        # last_contact dates, not the real wall-clock month (the dates are static synthetic data)
+        contact_dates=[l.get("last_contact") for l in leads if l.get("last_contact")]
+        latest_month=max(contact_dates)[:7] if contact_dates else None
+        deals_closed_this_month=sum(1 for l in closed if (l.get("last_contact") or "")[:7]==latest_month)
     else: hot,warm,cold=38,89,120
 
     ragas_path=Path("data/evaluation/ragas_results.json")
@@ -145,11 +179,15 @@ async def dashboard_stats():
         ragas_faithfulness=ragas_summary.get("faithfulness"); hallucination_rate=ragas_summary.get("hallucination_rate")
         ragas_evaluated=ragas_faithfulness is not None
 
+    avg_latency_ms=round(sum(_request_latencies_ms)/len(_request_latencies_ms),1) if _request_latencies_ms else None
+
     return {"total_leads":hot+warm+cold,"hot_leads":hot,"warm_leads":warm,"cold_leads":cold,
             "total_properties":len(DEMO_PROPERTIES),"available_properties":len(DEMO_PROPERTIES),
             "ragas_faithfulness":ragas_faithfulness,"hallucination_rate":hallucination_rate,"ragas_evaluated":ragas_evaluated,
-            "avg_latency_ms":42,"daily_requests":1284,
-            "lead_conversion_rate":15.4,"avg_lead_score":61.3,"revenue_pipeline_aed":48_500_000,"deals_closed_this_month":7}
+            "avg_latency_ms":avg_latency_ms,"requests_this_session":_request_count,
+            "session_started_at":_server_start_time,
+            "lead_conversion_rate":lead_conversion_rate,"avg_lead_score":avg_lead_score,
+            "revenue_pipeline_aed":revenue_pipeline_aed,"deals_closed_this_month":deals_closed_this_month}
 
 import os
 

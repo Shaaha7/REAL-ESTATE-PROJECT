@@ -9,7 +9,7 @@ export interface SampleLead{lead_id:string;client_name:string;budget_aed:number;
 export interface Property{id:string;title:string;location:string;price:number;bedrooms:number;bathrooms:number;area_sqft:number;property_type:string;amenities:string[];status:string;images:string[];description:string;yield_pct:number;service_charge_yearly:number;match_score?:number;match_reasons?:string[]}
 export interface RAGResponse{answer:string;sources:string[];confidence:number;answer_found_in_context:boolean;retrieved_chunks?:string[]}
 export interface AgentResponse{session_id:string;input:string;output:any;intermediate_steps:any[];latency_ms:number;provider:string}
-export interface DashboardStats{total_leads:number;hot_leads:number;warm_leads:number;cold_leads:number;total_properties:number;ragas_faithfulness:number;hallucination_rate:number;avg_latency_ms:number;daily_requests:number;lead_conversion_rate:number;avg_lead_score:number;revenue_pipeline_aed:number;deals_closed_this_month:number}
+export interface DashboardStats{total_leads:number;hot_leads:number;warm_leads:number;cold_leads:number;total_properties:number;ragas_faithfulness:number|null;hallucination_rate:number|null;ragas_evaluated:boolean;avg_latency_ms:number|null;requests_this_session:number;lead_conversion_rate:number;avg_lead_score:number;revenue_pipeline_aed:number;deals_closed_this_month:number}
 export const getHealth=()=>api.get('/health')
 export const getDashboardStats=()=>api.get<DashboardStats>('/stats/dashboard')
 export const scoreLead=(d:LeadScoreRequest)=>api.post<LeadScoreResponse>('/leads/score',d)

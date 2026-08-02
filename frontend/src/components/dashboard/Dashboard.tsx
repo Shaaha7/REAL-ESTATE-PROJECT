@@ -20,7 +20,7 @@ export default function Dashboard(){
   const[loading,setLoading]=useState(true)
   useEffect(()=>{getDashboardStats().then(r=>setStats(r.data)).catch(console.error).finally(()=>setLoading(false))},[])
   const leadData=stats?[{name:'HOT',value:stats.hot_leads},{name:'WARM',value:stats.warm_leads},{name:'COLD',value:stats.cold_leads}]:[]
-  const aiPerf=[{name:'Faithfulness',v:stats?Math.round(stats.ragas_faithfulness*100):0},{name:'Conversion',v:stats?stats.lead_conversion_rate:0},{name:'Avg Score',v:stats?stats.avg_lead_score:0}]
+  const aiPerf=[{name:'Faithfulness',v:stats?.ragas_evaluated?Math.round((stats.ragas_faithfulness||0)*100):0},{name:'Conversion',v:stats?stats.lead_conversion_rate:0},{name:'Avg Score',v:stats?stats.avg_lead_score:0}]
   if(loading)return<div className="flex items-center justify-center h-64"><div className="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"/></div>
   return(
 <div>
@@ -74,7 +74,7 @@ export default function Dashboard(){
     </div>
   </div>
   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-    {[{label:'RAGAS Faithfulness',value:stats?.ragas_evaluated?stats.ragas_faithfulness.toFixed(4):'—',target:stats?.ragas_evaluated?'0.97 ✓':'Not yet evaluated',color:stats?.ragas_evaluated?'text-emerald-400':'text-slate-500'},{label:'Hallucination Rate',value:stats?.ragas_evaluated?`${(stats.hallucination_rate*100).toFixed(1)}%`:'—',target:stats?.ragas_evaluated?'<2% ✓':'Not yet evaluated',color:stats?.ragas_evaluated?'text-brand-400':'text-slate-500'},{label:'Avg Latency',value:`${stats?.avg_latency_ms}ms`,target:'<50ms ✓',color:'text-amber-400'},{label:'Daily Requests',value:stats?.daily_requests.toLocaleString()||'0',target:'1,000+ capacity',color:'text-purple-400'}].map(m=>(
+    {[{label:'RAGAS Faithfulness',value:stats?.ragas_evaluated?stats.ragas_faithfulness!.toFixed(4):'—',target:stats?.ragas_evaluated?'0.97 ✓':'Not yet evaluated',color:stats?.ragas_evaluated?'text-emerald-400':'text-slate-500'},{label:'Hallucination Rate',value:stats?.ragas_evaluated?`${(stats.hallucination_rate!*100).toFixed(1)}%`:'—',target:stats?.ragas_evaluated?'<2% ✓':'Not yet evaluated',color:stats?.ragas_evaluated?'text-brand-400':'text-slate-500'},{label:'Avg Latency',value:stats?.avg_latency_ms!=null?`${stats.avg_latency_ms}ms`:'—',target:stats?.avg_latency_ms!=null?(stats.avg_latency_ms<50?'<50ms target ✓':'target <50ms'):'No requests yet',color:stats?.avg_latency_ms!=null?'text-amber-400':'text-slate-500'},{label:'Requests (Session)',value:stats?.requests_this_session.toLocaleString()||'0',target:'Since server start',color:'text-purple-400'}].map(m=>(
       <div key={m.label} className="card text-center">
         <div className={`text-2xl font-bold ${m.color} mb-1`}>{m.value}</div>
         <div className="text-xs text-slate-400 mb-1">{m.label}</div>
