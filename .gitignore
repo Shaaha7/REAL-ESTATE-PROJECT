@@ -15,3 +15,4 @@ frontend/dist/
 .DS_Store
 *.zip
 backend/.coverage
+backend/data/conversations/

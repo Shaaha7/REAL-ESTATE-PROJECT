@@ -15,9 +15,14 @@ from fastapi.middleware.gzip import GZipMiddleware
 from loguru import logger
 from pydantic import BaseModel, Field
 from src.utils.settings import get_settings
+# torch (via RAGPipeline's sentence-transformers embedder) must import before
+# xgboost (via LeadScoringAgent) - on Windows, loading xgboost's native DLL
+# first reliably breaks torch's own DLL init (WinError 1114 on torch/lib/
+# c10.dll). Same class of issue as the documented torch-vs-datasets ordering
+# conflict; confirmed by direct reproduction in this environment.
+from src.rag.pipeline import RAGPipeline
 from src.agents.lead_scoring_agent import LeadScoringAgent, LeadData
 from src.agents.property_retrieval_agent import PropertyRetrievalAgent, PropertyQuery, DEMO_PROPERTIES
-from src.rag.pipeline import RAGPipeline
 from src.agents.orchestrator import OrchestratorAgent
 from src.evaluation.ragas_evaluator import RAGASEvaluator
 
