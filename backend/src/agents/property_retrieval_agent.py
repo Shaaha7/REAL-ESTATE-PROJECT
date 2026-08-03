@@ -1,9 +1,11 @@
 from __future__ import annotations
-import json, random
+import json
 from typing import Optional
 from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from loguru import logger
+from src.database.mysql_client import MySQLClient
+from src.database.mongo_client import MongoClient
 
 DEMO_PROPERTIES = [
     {"id":"P001","title":"Luxury 3BR Villa — Private Pool & Golf View","location":"Dubai Hills Estate","price":2_150_000,"bedrooms":3,"bathrooms":3.5,"area_sqft":3400,"property_type":"villa","amenities":["private pool","landscaped garden","maids room","2 covered parking","golf view","smart home","BBQ area","24hr security"],"status":"available","images":["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800"],"description":"Stunning 3BR villa in prestigious Dubai Hills Estate with private pool, golf views, and premium finishes throughout.","yield_pct":7.0,"service_charge_yearly":27200,"agent":"Ahmed Al Rashidi","rera_no":"12345"},
@@ -24,7 +26,9 @@ class PropertyQuery(BaseModel):
     bedrooms: Optional[int] = None; free_text: str = ""
 
 class PropertyRetrievalAgent:
-    def __init__(self): pass
+    def __init__(self):
+        self._mysql = MySQLClient()
+        self._mongo = MongoClient()
 
     def _filter(self, q: PropertyQuery) -> list[dict]:
         r = list(DEMO_PROPERTIES)
@@ -35,19 +39,78 @@ class PropertyRetrievalAgent:
         if q.property_type: r = [p for p in r if q.property_type.lower() in p["property_type"].lower()]
         return r
 
+    def _mysql_search(self, q: PropertyQuery) -> Optional[list[dict]]:
+        """Structured filter search. Returns None only if MySQL is unreachable -
+        an empty list is a real (if unsatisfying) answer and must not fall back."""
+        if self._mysql.engine is None: return None
+        sql, params = "SELECT * FROM properties WHERE 1=1", {}
+        if q.budget_max is not None: sql += " AND price <= :budget_max"; params["budget_max"] = q.budget_max
+        if q.budget_min is not None: sql += " AND price >= :budget_min"; params["budget_min"] = q.budget_min
+        if q.bedrooms is not None: sql += " AND bedrooms = :bedrooms"; params["bedrooms"] = q.bedrooms
+        if q.location: sql += " AND LOWER(location) LIKE :location"; params["location"] = f"%{q.location.lower()}%"
+        if q.property_type: sql += " AND LOWER(property_type) LIKE :property_type"; params["property_type"] = f"%{q.property_type.lower()}%"
+        try:
+            rows = self._mysql.execute_query(sql, params)
+        except Exception as e:
+            logger.warning(f"MySQL property search failed, falling back: {e}")
+            return None
+        for r in rows:
+            for field in ("amenities", "images"):
+                if isinstance(r.get(field), str):
+                    try: r[field] = json.loads(r[field])
+                    except Exception: r[field] = []
+        return rows
+
+    def _mongo_search(self, q: PropertyQuery) -> Optional[list[dict]]:
+        """Free-text search over description/amenities/title/location. None only if
+        MongoDB is unreachable; an empty list is a legitimate no-match result."""
+        if self._mongo.db is None: return None
+        try:
+            filter_doc = {"$text": {"$search": q.free_text}} if q.free_text else {}
+            return self._mongo.find("properties", filter_doc, limit=20)
+        except Exception as e:
+            logger.warning(f"MongoDB property search failed, falling back: {e}")
+            return None
+
+    def _score(self, p: dict, q: PropertyQuery) -> tuple[float, list[str]]:
+        criteria = [q.location, q.budget_max, q.bedrooms, q.property_type]
+        total = sum(1 for c in criteria if c not in (None, ""))
+        matched, reasons = 0, []
+        if q.location and q.location.lower() in p["location"].lower():
+            matched += 1; reasons.append(f"Located in {p['location']}")
+        if q.budget_max and p["price"] <= q.budget_max:
+            matched += 1; reasons.append(f"Within AED {q.budget_max:,.0f} budget")
+        if q.bedrooms is not None and p["bedrooms"] == q.bedrooms:
+            matched += 1; reasons.append(f"Exactly {q.bedrooms}BR as requested")
+        if q.property_type and q.property_type.lower() in p["property_type"].lower():
+            matched += 1; reasons.append(f"Matches requested {q.property_type} type")
+        if not reasons: reasons.append("Matches your search criteria")
+        score = 0.6 + 0.4 * (matched / total) if total else 0.75
+        return round(score, 3), reasons
+
     def retrieve(self, q: PropertyQuery) -> dict:
-        route = "both" if (q.free_text and any([q.budget_max,q.bedrooms,q.location])) else ("mongodb" if q.free_text else "mysql")
-        candidates = self._filter(q) or list(DEMO_PROPERTIES[:5])
-        rng = random.Random(42)
+        want_structured = bool(q.property_type or q.location or q.budget_min or q.budget_max or q.bedrooms is not None) or not q.free_text
+        want_text = bool(q.free_text)
+
+        mysql_results = self._mysql_search(q) if want_structured else None
+        mongo_results = self._mongo_search(q) if want_text else None
+
+        if mysql_results is not None and mongo_results is not None:
+            merged = {p["id"]: p for p in mysql_results}
+            for p in mongo_results: merged.setdefault(p["id"], p)
+            candidates, route = list(merged.values()), "mysql+mongodb"
+        elif mysql_results is not None:
+            candidates, route = mysql_results, "mysql"
+        elif mongo_results is not None:
+            candidates, route = mongo_results, "mongodb"
+        else:
+            candidates, route = self._filter(q) or list(DEMO_PROPERTIES[:5]), "demo_fallback"
+
+        source = "demo_data" if route == "demo_fallback" else route
         results = []
         for p in candidates[:5]:
-            score = rng.uniform(0.70, 0.97)
-            reasons = []
-            if q.location and q.location.lower() in p["location"].lower(): score=min(1.0,score+0.05); reasons.append(f"Located in {p['location']}")
-            if q.budget_max and p["price"]<=q.budget_max: reasons.append(f"Within AED {q.budget_max:,.0f} budget")
-            if q.bedrooms is not None and p["bedrooms"]==q.bedrooms: reasons.append(f"Exactly {q.bedrooms}BR as requested")
-            if not reasons: reasons.append("Matches your search criteria")
-            results.append({**p,"match_score":round(score,3),"match_reasons":reasons,"source":"demo_data"})
+            score, reasons = self._score(p, q)
+            results.append({**p, "match_score": score, "match_reasons": reasons, "source": source})
         results.sort(key=lambda x: x["match_score"], reverse=True)
         return {"query":q.model_dump(),"source_routed":route,"properties":results,"total_candidates":len(candidates),"returned":len(results)}
 
