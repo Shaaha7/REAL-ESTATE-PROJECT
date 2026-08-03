@@ -35,7 +35,9 @@ class Settings(BaseSettings):
 
     @property
     def mysql_url(self) -> str:
-        return f"mysql+pymysql://{self.mysql_user}:{self.mysql_password}@{self.mysql_host}:{self.mysql_port}/{self.mysql_db}"
+        # without an explicit charset, PyMySQL's connection default mangles
+        # multi-byte UTF-8 (em-dashes etc. come back mojibake'd on read)
+        return f"mysql+pymysql://{self.mysql_user}:{self.mysql_password}@{self.mysql_host}:{self.mysql_port}/{self.mysql_db}?charset=utf8mb4"
     @property
     def active_api_key(self) -> str:
         return self.groq_api_key if self.llm_provider == "groq" else self.google_api_key

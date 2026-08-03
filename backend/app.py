@@ -218,8 +218,11 @@ async def dashboard_stats():
     ragas_evaluated=False
     if ragas_path.exists():
         with open(ragas_path) as f: ragas_summary=json.load(f).get("summary",{})
-        ragas_faithfulness=ragas_summary.get("faithfulness"); hallucination_rate=ragas_summary.get("hallucination_rate")
-        ragas_evaluated=ragas_faithfulness is not None
+        # a mean computed from too few surviving (non-timed-out) judge calls
+        # isn't a real measurement - keep the dashboard honest about that
+        if not ragas_summary.get("insufficient_sample", False):
+            ragas_faithfulness=ragas_summary.get("faithfulness"); hallucination_rate=ragas_summary.get("hallucination_rate")
+            ragas_evaluated=ragas_faithfulness is not None
 
     avg_latency_ms=round(sum(_request_latencies_ms)/len(_request_latencies_ms),1) if _request_latencies_ms else None
 

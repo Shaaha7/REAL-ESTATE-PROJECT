@@ -19,6 +19,12 @@ class RAGASEvaluator:
     configured LLM (used both to generate RAG answers and, wrapped for ragas,
     as the faithfulness/relevancy judge) - there is no offline/fake mode."""
 
+    # Free-tier LLM rate limits mean individual ragas metric calls routinely
+    # time out and land as NaN even when the overall evaluate() call "succeeds".
+    # A mean over 1 surviving value out of 9 is not a measurement - gate the
+    # achieved/met flags on an actual minimum sample surviving per metric.
+    MIN_VALID_SAMPLE = 5
+
     def __init__(self, rag_pipeline=None):
         self.rag = rag_pipeline
         self.results_path = Path("data/evaluation/ragas_results.json")
@@ -92,26 +98,42 @@ class RAGASEvaluator:
         cols = ["question", "answer", "faithfulness", "answer_relevancy", "context_precision", "context_recall"]
         per_query = df[cols].to_dict(orient="records")
 
-        def safe_mean(col: str) -> float:
+        def safe_mean(col: str) -> tuple[float, int]:
             s = df[col].dropna()
-            return float(s.mean()) if len(s) else float("nan")
+            return (float(s.mean()) if len(s) else float("nan")), len(s)
 
-        faith = safe_mean("faithfulness")
+        faith, faith_n = safe_mean("faithfulness")
+        ar, ar_n = safe_mean("answer_relevancy")
+        cp, cp_n = safe_mean("context_precision")
+        cr, cr_n = safe_mean("context_recall")
         hallucination_rate = (1 - faith) if faith == faith else float("nan")
+        enough_signal = faith_n >= self.MIN_VALID_SAMPLE
         summary = {
             "faithfulness": faith,
-            "answer_relevancy": safe_mean("answer_relevancy"),
-            "context_precision": safe_mean("context_precision"),
-            "context_recall": safe_mean("context_recall"),
+            "answer_relevancy": ar,
+            "context_precision": cp,
+            "context_recall": cr,
             "hallucination_rate": hallucination_rate,
             "num_queries": len(questions),
             "num_skipped": skipped,
+            # how many of num_queries actually produced a non-NaN score for each
+            # metric - ragas silently NaNs a row when its judge call times out,
+            # which a plain dropna().mean() would hide
+            "valid_sample_sizes": {
+                "faithfulness": faith_n, "answer_relevancy": ar_n,
+                "context_precision": cp_n, "context_recall": cr_n,
+            },
+            "min_valid_sample_required": self.MIN_VALID_SAMPLE,
             "target_faithfulness": 0.97,
             "target_hallucination_rate": 0.02,
-            "faithfulness_achieved": bool(faith == faith and faith >= 0.97),
-            "hallucination_target_met": bool(hallucination_rate == hallucination_rate and hallucination_rate <= 0.02),
+            "faithfulness_achieved": bool(faith == faith and faith >= 0.97 and enough_signal),
+            "hallucination_target_met": bool(hallucination_rate == hallucination_rate and hallucination_rate <= 0.02 and enough_signal),
+            "insufficient_sample": not enough_signal,
         }
         results = {"summary": summary, "per_query_results": per_query}
         self.results_path.write_text(json.dumps(results, indent=4, default=str))
-        logger.success(f"RAGAS: faithfulness={faith:.4f} over {len(questions)} queries ({skipped} skipped)")
+        if enough_signal:
+            logger.success(f"RAGAS: faithfulness={faith:.4f} over {faith_n}/{len(questions)} queries with a valid score ({skipped} skipped upstream)")
+        else:
+            logger.warning(f"RAGAS: only {faith_n}/{len(questions)} queries produced a valid faithfulness score (below MIN_VALID_SAMPLE={self.MIN_VALID_SAMPLE}) - likely judge-LLM rate limiting, not a real measurement")
         return results

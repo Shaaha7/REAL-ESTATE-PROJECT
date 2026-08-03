@@ -1,0 +1,98 @@
+{
+    "summary": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9371235320545664,
+        "context_precision": 0.9999999999666667,
+        "context_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "num_queries": 9,
+        "num_skipped": 0,
+        "valid_sample_sizes": {
+            "faithfulness": 1,
+            "answer_relevancy": 1,
+            "context_precision": 1,
+            "context_recall": 1
+        },
+        "min_valid_sample_required": 5,
+        "target_faithfulness": 0.97,
+        "target_hallucination_rate": 0.02,
+        "faithfulness_achieved": false,
+        "hallucination_target_met": false,
+        "insufficient_sample": true,
+        "note": "Groq free-tier rate limits caused most per-query judge calls to time out (5 needed, only 1 of 9 queries produced a valid faithfulness score). Numbers above are real but not a reliable measurement at this sample size."
+    },
+    "per_query_results": [
+        {
+            "question": "What is the typical split of the property transfer fee between the buyer and seller?",
+            "answer": "The typical split of the property transfer fee is 2% for the buyer and 2% for the seller, although the full 4% may be borne by one party based on contract terms.",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": NaN
+        },
+        {
+            "question": "What is the approximate gross yield for properties in Dubai Marina in 2024?",
+            "answer": "5-7%",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": NaN
+        },
+        {
+            "question": "What are the costs associated with obtaining a power of attorney in Dubai?",
+            "answer": "The cost of obtaining a power of attorney in Dubai is AED 2,000-4,000 (notarization and attestation) if signed abroad, and AED 500-1,500 (notarization) + typing fees if signed in the UAE.",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": 1.0
+        },
+        {
+            "question": "What is the typical service charge rate per square foot for apartments in Downtown Dubai in 2024?",
+            "answer": "AED 18-25 per sqft",
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9371235320545664,
+            "context_precision": NaN,
+            "context_recall": NaN
+        },
+        {
+            "question": "What is the transfer fee for property purchases in Ras Al Khaimah?",
+            "answer": "2% of the property value",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": NaN
+        },
+        {
+            "question": "What is the fee range for the Dubai British School in Emirates Hills?",
+            "answer": "AED 45,000-65,000/year",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": NaN
+        },
+        {
+            "question": "What was the percentage decrease in Dubai property prices from peak during the 2008-2009 global financial crisis?",
+            "answer": "50-60%",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": NaN
+        },
+        {
+            "question": "What is the recommended first offer strategy when negotiating a property price?",
+            "answer": "Start 10-15% below asking price",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": 0.9999999999666667,
+            "context_recall": NaN
+        },
+        {
+            "question": "What are the estimated rental incomes for the apartment?",
+            "answer": "AED 90,000-110,000/year (unfurnished) and AED 115,000-135,000/year (furnished)",
+            "faithfulness": NaN,
+            "answer_relevancy": NaN,
+            "context_precision": NaN,
+            "context_recall": NaN
+        }
+    ]
+}
