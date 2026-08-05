@@ -1,12 +1,12 @@
-# 🏢 PropAI — Autonomous Real Estate AI Platform
+# PropAI — Autonomous Real Estate AI Platform
 
-> Production-ready **Multi-Agent Real Estate AI System** built with **FastAPI + LangChain + FAISS RAG + XGBoost + SHAP + Gemini + Groq**
+> Multi-Agent Real Estate AI System built with **FastAPI + LangChain + FAISS RAG + XGBoost + SHAP + Gemini + Groq**
 
 A broker-focused AI copilot that performs **lead scoring, property retrieval, RAG knowledge answering, explainability reporting, and multi-agent orchestration** in one platform.
 
 ---
 
-# 🚀 Live System Capabilities
+## Live System Capabilities
 
 PropAI enables real estate brokers to:
 
@@ -15,24 +15,28 @@ PropAI enables real estate brokers to:
 * Answer legal & market questions using RAG
 * Generate explainable AI insights (SHAP)
 * Run orchestrated multi-agent workflows
-* Operate under low-latency (<50ms API target)
 
 ---
 
-# 📊 Key Performance Metrics
+## Evaluation Status
 
-| Metric              | Value                          |
-| ------------------- | ------------------------------ |
-| RAGAS Faithfulness  | **0.97**                       |
-| Hallucination Rate  | **<2%**                        |
-| API Latency Target  | **<50ms**                      |
-| Lead Scoring Engine | **XGBoost + LLM Ensemble**     |
-| Explainability      | **SHAP Attribution**           |
-| Deployment Ready    | **Render + Vercel Compatible** |
+RAG quality is measured with RAGAS (faithfulness, answer relevancy, context precision/recall) against a held-out query set, targeting **0.97 faithfulness** and **<2% hallucination rate**.
+
+The current run is **not a reliable measurement**: Groq's free-tier rate limits caused most per-query judge calls to time out, so only 1 of 9 queries produced a valid faithfulness score (5 is the minimum sample size the evaluator requires before reporting a result — see `src/evaluation/ragas_evaluator.py`). The single valid sample scored faithfulness 1.0 and hallucination rate 0.0, which is directionally encouraging but not statistically meaningful at n=1. A full run needs a paid LLM tier to sustain the required call volume.
+
+| Metric | Target | Current Status |
+| --- | --- | --- |
+| RAGAS Faithfulness | 0.97 | Not yet reliably measured (n=1 of 9, insufficient sample) |
+| Hallucination Rate | <2% | Not yet reliably measured (n=1 of 9, insufficient sample) |
+| API Latency | <50ms | Target, not yet benchmarked |
+| Lead Scoring Engine | — | XGBoost + LLM ensemble |
+| Explainability | — | SHAP attribution |
+
+Full evaluation artifacts: `backend/data/evaluation/ragas_results.json`.
 
 ---
 
-# 🧠 System Architecture
+## System Architecture
 
 ```
 User Request
@@ -55,10 +59,10 @@ XGBoost     FAISS        Knowledge
 
 ---
 
-# 📁 Project Structure
+## Project Structure
 
 ```
-REAL-ESTATE-PROJECT/
+propai-real-estate-platform/
 │
 ├── app.py
 ├── requirements.txt
@@ -99,7 +103,7 @@ REAL-ESTATE-PROJECT/
 
 ---
 
-# 🆓 Free LLM Providers Supported
+## Free LLM Providers Supported
 
 | Provider      | Model                   |
 | ------------- | ----------------------- |
@@ -110,13 +114,13 @@ Embeddings run locally using FAISS.
 
 ---
 
-# ⚙️ Installation Guide
+## Installation Guide
 
 ### Step 1 — Clone repository
 
 ```
-git clone https://github.com/shaaha7/REAL-ESTATE-PROJECT.git
-cd REAL-ESTATE-PROJECT
+git clone https://github.com/Shaaha-7/propai-real-estate-platform.git
+cd propai-real-estate-platform
 ```
 
 ---
@@ -172,7 +176,7 @@ http://localhost:8000/docs
 
 ---
 
-# 🔌 API Endpoints
+## API Endpoints
 
 | Endpoint           | Purpose                      |
 | ------------------ | ---------------------------- |
@@ -180,12 +184,12 @@ http://localhost:8000/docs
 | /leads/score       | Lead classification          |
 | /properties/search | Property retrieval           |
 | /rag/query         | Knowledge base Q&A           |
-| /evaluation/ragas  | RAG evaluation               |
+| /evaluation/ragas  | RAG evaluation                |
 | /metrics           | Monitoring stats             |
 
 ---
 
-# 📈 Lead Scoring Engine
+## Lead Scoring Engine
 
 Hybrid scoring architecture:
 
@@ -202,7 +206,7 @@ Produces:
 
 ---
 
-# 🧪 Example API Call
+## Example API Call
 
 ```
 POST /leads/score
@@ -222,7 +226,7 @@ Example payload:
 
 ---
 
-# 🐳 Docker Deployment
+## Docker Deployment
 
 ```
 docker-compose up -d
@@ -238,7 +242,7 @@ Services started:
 
 ---
 
-# 🔐 Safety Guardrails
+## Safety Guardrails
 
 Includes:
 
@@ -250,7 +254,7 @@ Includes:
 
 ---
 
-# 📚 Tech Stack
+## Tech Stack
 
 FastAPI
 LangChain
@@ -265,9 +269,9 @@ Docker
 
 ---
 
-# 👨‍💻 Author
+## Author
 
 **Shabeer Ahamed K**
 
 Autonomous Real Estate AI Platform Developer
-Multi-Agent LLM Systems • Applied AI • Production ML Pipelines
+Multi-Agent LLM Systems · Applied AI · Production ML Pipelines
